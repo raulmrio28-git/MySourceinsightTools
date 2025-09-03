@@ -16,6 +16,11 @@
 ** ===========================================================================
 */
 
+macro ProjectGetName()
+{
+	return StringGetLastPathItem(GetProjName(GetCurrentProj()))
+}
+
 macro ProjectGetValue(projectname,val)
 {
 	tmp = IsIniSectionExist("User_Projects.ini", projectname, 0)

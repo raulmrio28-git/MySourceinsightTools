@@ -17,6 +17,15 @@ macro wip()
 	//Done testing --------------
 
 	//20250903 1743 - project errors
+	//Done testing --------------
 	ProjectGetValue("NarutoUzumaki", "asdfghjkl") //project not exists
-	msg(ProjectGetType("fakeproject"))	
+	msg(ProjectGetType("Base")) //project type
+	msg(ProjectGetPath("Base")) //project path
+	//Done testing --------------
+
+	//20250903 1826 - string last path item.......
+	msg(StringGetLastPathItem("Test\\abcdef")) //no slash at end
+	msg(StringGetLastPathItem("Test\\abcdefghi\\")) //slash at end
+	//20250903 1839 - testing f1
+	
 }
