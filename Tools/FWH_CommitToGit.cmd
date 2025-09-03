@@ -23,6 +23,12 @@ pause
 
 cd /d %1
 
+pause
+
 if %3==1 git add .
 
+pause
+
 git commit -m %2
+
+pause
