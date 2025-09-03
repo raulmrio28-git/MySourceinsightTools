@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceInsightLayout
+	AppVer="4.00.0141"
+	AppVerMinReader="4.00.0030"
+	>
+	<!-- This is a Source Insight desktop layout file. -->
+	<!-- www.sourceinsight.com -->
+	<MainWindow
+		IsMaximized="0"
+		IsFullScreen="0"
+		DPI="96"
+		>
+		<WindowRect Left="267" Top="260" Right="1225" Bottom="1267" />
+		<NormalWindowRect Left="267" Top="260" Right="1225" Bottom="1267" />
+	</MainWindow>
+	<Options>
+		<WindowTabOptions IsVisible="1" ShowPathInfo="1" SortOrder="Usage" />
+	</Options>
+	<PanelArea>
+		<WorkArea Left="275" Top="382" Right="1217" Bottom="1259" />
+		<TabTray IsVisible="0" />
+		<DockZones>
+			<Left>
+				<Rect Left="275" Top="385" Right="278" Bottom="1256" />
+				<Contents/>
+			</Left>
+			<Top>
+				<Rect Left="275" Top="382" Right="1217" Bottom="385" />
+				<Contents/>
+			</Top>
+			<Right>
+				<Rect Left="953" Top="385" Right="1217" Bottom="1256" />
+				<Contents>
+					<PanelHost
+						Title="Project Files"
+						id="ProjectPanelHost"
+						IsHidden="0"
+						PctTrans="0"
+						IsMinimized="0"
+						PanelCount="4"
+						idPalActive="ProjectFilePanel"
+						>
+						<WindowRect Left="956" Top="385" Right="1217" Bottom="876" />
+						<PredockRect Left="1154" Top="821" Right="1979" Bottom="1571" />
+						<Panels>
+							<Panel
+								id="ProjectSymbolPanel"
+								IsHidden="0"
+								ViewToolbar="1"
+								>
+								<Columns>
+									<Column0 ID="6" Width="505" />
+									<Column1 ID="0" Width="450" />
+									<Column2 ID="4" Width="144" />
+								</Columns>
+							</Panel>
+							<Panel
+								id="ProjectSymbolCategoryPanel"
+								IsHidden="0"
+								ViewToolbar="1"
+								>
+								<Columns>
+									<Column0 ID="7" Width="288" />
+									<Column1 ID="0" Width="144" />
+								</Columns>
+							</Panel>
+							<Panel id="ProjectFolderPanel" IsHidden="0" ViewToolbar="1" />
+							<Panel
+								id="ProjectFilePanel"
+								IsHidden="0"
+								ViewToolbar="1"
+								>
+								<Columns>
+									<Column0 ID="0" Width="502" />
+									<Column1 ID="4" Width="96" />
+								</Columns>
+							</Panel>
+						</Panels>
+					</PanelHost>
+					<PanelHost
+						Title="Bookmarks"
+						id="BookmarkPanelHost"
+						IsHidden="0"
+						PctTrans="0"
+						IsMinimized="0"
+						PanelCount="1"
+						idPalActive="BookmarkPanel"
+						>
+						<WindowRect Left="956" Top="876" Right="1217" Bottom="1256" />
+						<PredockRect Left="150" Top="315" Right="750" Bottom="600" />
+						<Panels>
+							<Panel id="BookmarkPanel" IsHidden="0" ViewToolbar="1" />
+						</Panels>
+					</PanelHost>
+					<PanelHost
+						Title="Relation"
+						id="RelationPanelHost"
+						IsHidden="1"
+						PctTrans="0"
+						IsMinimized="0"
+						PanelCount="1"
+						idPalActive="RelationPanel"
+						>
+						<WindowRect Left="1099" Top="385" Right="1217" Bottom="1256" />
+						<PredockRect Left="100" Top="400" Right="450" Bottom="800" />
+						<Panels>
+							<Panel
+								id="RelationPanel"
+								IsHidden="0"
+								ViewToolbar="1"
+								>
+								<RelationOptions
+									ViewMode="Outline"
+									IsLocked="0"
+									ExcludeMacros="0"
+									ShowMetrics="0"
+									ShowGraphDetails="1"
+									GroupMultipleRefs="1"
+									ShowLineNumbers="1"
+									ShowFileName="1"
+									AutoExpandLevels="1"
+									CodeMetricsType="1"
+									SortType="1"
+									>
+									<TrackingOptions tracktype="1" InComments="0" InStrings="0" InAnyFile="0" />
+									<SymbolTypes All="1" />
+									<CodeMetricsFilter CodeMetricsType="1" MinValue="0" MaxValue="0" />
+									<ViewRelationRules
+										ForTypes="Contents"
+										ForFunctions="References"
+										ForVariables="References"
+										ForClasses="Inheritance"
+										ForFiles="None"
+										/>
+								</RelationOptions>
+								<Columns>
+									<Column0 ID="0" Width="349" />
+									<Column1 ID="2" Width="144" />
+									<Column2 ID="3" Width="96" />
+								</Columns>
+							</Panel>
+						</Panels>
+					</PanelHost>
+				</Contents>
+			</Right>
+			<Bottom>
+				<Rect Left="275" Top="1256" Right="1217" Bottom="1259" />
+				<Contents/>
+			</Bottom>
+		</DockZones>
+		<Floating>
+			<PanelHost
+				Title="Context"
+				id="ContextPanelHost"
+				IsHidden="1"
+				PctTrans="0"
+				IsMinimized="0"
+				PanelCount="1"
+				idPalActive="ContextPanel"
+				>
+				<WindowRect Left="953" Top="539" Right="1478" Bottom="989" />
+				<PredockRect Left="698" Top="315" Right="1223" Bottom="765" />
+				<Panels>
+					<Panel id="ContextPanel" IsHidden="0" ViewToolbar="1" />
+				</Panels>
+			</PanelHost>
+			<PanelHost
+				Title="Window List"
+				id="WindowPanelHost"
+				IsHidden="1"
+				PctTrans="0"
+				IsMinimized="0"
+				PanelCount="1"
+				idPalActive="WindowPanel"
+				>
+				<WindowRect Left="125" Top="250" Right="563" Bottom="500" />
+				<PredockRect Left="125" Top="250" Right="563" Bottom="500" />
+				<Panels>
+					<Panel
+						id="WindowPanel"
+						IsHidden="0"
+						ViewToolbar="1"
+						>
+						<Columns>
+							<Column0 ID="0" Width="144" />
+							<Column1 ID="1" Width="144" />
+						</Columns>
+					</Panel>
+				</Panels>
+			</PanelHost>
+			<PanelHost
+				Title="Snippets"
+				id="SnippetPanelHost"
+				IsHidden="1"
+				PctTrans="0"
+				IsMinimized="0"
+				PanelCount="1"
+				idPalActive="SnippetPanel"
+				>
+				<WindowRect Left="100" Top="210" Right="650" Bottom="400" />
+				<PredockRect Left="100" Top="210" Right="650" Bottom="400" />
+				<Panels>
+					<Panel
+						id="SnippetPanel"
+						IsHidden="0"
+						ViewToolbar="1"
+						>
+						<Columns>
+							<Column0 ID="0" Width="96" />
+							<Column1 ID="1" Width="192" />
+							<Column2 ID="2" Width="96" />
+							<Column3 ID="3" Width="96" />
+						</Columns>
+					</Panel>
+				</Panels>
+			</PanelHost>
+			<PanelHost
+				Title="Clips"
+				id="ClipPanelHost"
+				IsHidden="1"
+				PctTrans="0"
+				IsMinimized="0"
+				PanelCount="1"
+				idPalActive="ClipPanel"
+				>
+				<WindowRect Left="140" Top="240" Right="450" Bottom="400" />
+				<PredockRect Left="140" Top="240" Right="450" Bottom="400" />
+				<Panels>
+					<Panel id="ClipPanel" IsHidden="0" ViewToolbar="1" />
+				</Panels>
+			</PanelHost>
+		</Floating>
+	</PanelArea>
+	<RelationWindowGlobalOptions ShowAll="1" />
+</SourceInsightLayout>
