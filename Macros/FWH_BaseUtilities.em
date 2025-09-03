@@ -96,7 +96,7 @@ macro BaseCommitToGit(add)
 		reason = "@szMonth@@szDay@ @szHours@@szMinutes@ @sz@"
 	}
 
-	ShellExecute("open", GetToolsFolder() # "\\FWH_CommitToGit.cmd", ProjectGetPath(ProjectGetName()) # " " # "\"" # sz # "\" @add@", "", 0) 
+	ShellExecute("open", GetToolsFolder() # "\\FWH_CommitToGit.cmd", ProjectGetPath(ProjectGetName()) # " " # "\"" # sz # "\" @add@", "", 1) 
 }
 
 macro BaseCommitToGitAdd()
