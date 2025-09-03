@@ -19,16 +19,10 @@ REM
 
 ECHO %1 %2 %3
 
-pause
-
 cd /d %1
-
-pause
 
 if %3==1 git add .
 
-pause
-
 git commit -m %2
 
-pause
+git push
