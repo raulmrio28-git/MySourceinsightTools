@@ -447,6 +447,7 @@
 	</Menus>
 	<Keymaps>
 		<Main>
+			<item Command="InsUpdateInHistory" Keycode="(C)U" Allocated="1" />
 			<item Command="fwh_si_f2" Keycode="F2" Allocated="1" />
 			<item Command="wip" Keycode="(C)W" Allocated="1" />
 			<item Command="fwh_si_f1" Keycode="F1" Allocated="1" />

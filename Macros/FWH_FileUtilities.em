@@ -11,6 +11,8 @@
 **
 ** when          who             what, where, why
 ** ----------    ------------    --------------------------------
+** 2025-09-03	 konakona		 Move BaseWriteReason to BaseUtilities, add
+**                               update history macro
 ** 2025-09-02    konakona        Move to fileutilities.em
 ** 2025-01-10    konakona        Fix month to string error
 ** 2024-11-10    konakona        Add new macro (InsEditReasonCommentMkf)
@@ -582,6 +584,92 @@ macro InsEditReasonCommentHash()
 ** ===========================================================================
 **
 ** Function:        
+**     InsUpdateInHistory
+**
+** Description: 
+**     Writes a new update in file header's history
+** 
+** Input: 
+**     Author, reason
+** 
+** Output: 
+**     New line with new update
+** 
+** Return value: 
+**     none
+** 
+** Side effects:
+**     File overwritten
+**
+** ===========================================================================
+*/
+
+macro InsUpdateInHistory()
+{
+	szMyName = Ask("Enter your name...:")
+	szDescription = Ask("Enter the description of file:")
+	if (szDescription != "")
+	{
+		szTime = GetSysTime(1)
+		Day = szTime.Day
+		Month = szTime.Month
+		Year = szTime.Year
+		if (Day < 10)
+			szDay = "0@Day@"
+		else
+			szDay = Day
+		if (Month < 10)
+			szMonth = "0@Month@"
+		else
+			szMonth = Month
+
+		hBuf = GetCurrentBuf()
+
+		is_makefile = 0
+
+		section_str = "** ----------    ------------    --------------------------------"
+
+		find = SearchInBuf(hbuf, section_str, 0,0, TRUE, FALSE, TRUE)
+
+		if (find == "")
+		{
+			section_str = "# ----------    ------------    --------------------------------"
+			find = SearchInBuf(hbuf, section_str, 0,0, TRUE, FALSE, TRUE)
+		}
+
+		if (find == "")
+		{
+			UtilitiesShowMessage("FILE_CANNOT_FIND_INFOHDR", GetFileName(GetBufName(hBuf)), 1)
+			stop
+		}
+
+		find_line = find.lnFirst
+
+		tmp = GetBufLine(hbuf, find_line)
+
+		if (tmp[0] == "#")
+			is_makefile = 1
+
+		nlength = StrLen(szMyName)
+		if (nLength > 12)
+			szFixMyName = strtrunc(szMyName, 12)
+		else
+			while(StrLen(szMyName) < 12)
+				szMyName = szMyName # " "
+			szFixMyName = szMyName
+
+		if (is_makefile == 0)
+			InsBufLine(hbuf, find_line+1, "** @Year@/@szMonth@/@szDay@    @szFixMyName@    @szDescription@")
+		else
+			InsBufLine(hbuf, find_line+1, "# @Year@/@szMonth@/@szDay@    @szFixMyName@    @szDescription@")
+	}
+}
+}
+
+/*
+** ===========================================================================
+**
+** Function:        
 **     IfdefineSz
 **
 ** Description: 
@@ -784,10 +872,58 @@ macro GetWordLeftOfIch(ich, sz)
 	 return wordinfo
 }
 
+/*
+** ===========================================================================
+**
+** Function:        
+**     FileExists
+**
+** Description: 
+**     Check if file exists
+** 
+** Input: 
+**     Filename
+** 
+** Output: 
+**     File exists or not
+** 
+** Return value: 
+**     none
+** 
+** Side effects:
+**     Opens buffer of file
+**
+** ===========================================================================
+*/
+
 macro FileExists(file)
 {
 	return OpenBuf(file) != hNil
 }
+
+/*
+** ===========================================================================
+**
+** Function:        
+**     OpenCache
+**
+** Description: 
+**     Open cache of file
+** 
+** Input: 
+**     Filename
+** 
+** Output: 
+**     File buffer
+** 
+** Return value: 
+**     none
+** 
+** Side effects:
+**     Opens buffer of file
+**
+** ===========================================================================
+*/
 
 macro OpenCache(file)
 {	
@@ -807,53 +943,4 @@ macro OpenCache(file)
 		}
 	}
 	return hbuf
-}
-
-macro BaseWriteReason()
-{
-	sz = Ask("Enter reason:")
-	if (sz != "")
-	{
-		szTime = GetSysTime(1)
-		Hours = szTime.Hour
-		Minutes = szTime.Minute
-		Day = szTime.Day
-		Month = szTime.Month
-		Year = szTime.Year
-		if (Day < 10)
-			szDay = "0@Day@"
-		else
-			szDay = Day
-		if (Month < 10)
-			szMonth = "0@Month@"
-		else
-			szMonth = Month
-		if (Hours < 10)
-			szHours = "0@Hours@"
-		else
-			szHours = Hours
-		if (Minutes < 10)
-			szMinutes = "0@Minutes@"
-		else
-			szMinutes = Minutes
-		hwnd = GetCurrentWnd()
-		lnFirst = GetWndSelLnFirst(hwnd)
-		lnLast = GetWndSelLnLast(hwnd)
-		hbuf = GetCurrentBuf()
-		// get line the selection (insertion point) is on
-		szLine = GetBufLine(hbuf, lnFirst - 1);
-		chTab = CharFromAscii(9)
-		// prepare a new indented blank line to be inserted.
-		// keep white space on left and add a tab to indent.
-		// this preserves the indentation level.
-		i = 0 /* loop control */
-		ich = ""
-		while (szLine[i] == " " || szLine[i] == chTab)
-		{
-			ich = Cat(ich, szLine[i])
-			i = i + 1
-		}
-
-		InsBufLine(hbuf, lnFirst, "@ich@//@Year@@szMonth@@szDay@ @szHours@@szMinutes@ - @sz@")
-	}
 }

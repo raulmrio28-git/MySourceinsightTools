@@ -11,6 +11,7 @@
 **
 ** when          who             what, where, why
 ** ----------    ------------    --------------------------------
+** 2025/09/03    konakona        Add tools folder grabber
 ** 2025/09/02    konakona        Created.
 **
 ** ===========================================================================
@@ -34,3 +35,4 @@ macro GetRoot()
 macro GetTempFolder()	{return GetRoot() # "\\Temp"}
 macro GetConfigFolder()		{return GetRoot() # "\\Config"}
 macro GetConfigUserFolder()		{return GetRoot() # "\\Config\\User"} 
+macro GetToolsFolder()		{return GetRoot() # "\\Tools"}
