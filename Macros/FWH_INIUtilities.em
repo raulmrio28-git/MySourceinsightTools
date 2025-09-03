@@ -16,6 +16,30 @@
 ** ===========================================================================
 */
 
+/*
+** ===========================================================================
+**
+** Function:        
+**     GetIniPath
+**
+** Description: 
+**     Get INI path from base root
+** 
+** Input: 
+**     Filename
+** 
+** Output: 
+**     CONFIG_FOLDER/USERCONFIG_FOLDER\file
+** 
+** Return value: 
+**     fn
+** 
+** Side effects:
+**     None
+**
+** ===========================================================================
+*/
+
 macro GetIniPath(file)
 {
 	fn = GetConfigFolder() # "\\" # file
@@ -37,6 +61,29 @@ macro GetIniPath(file)
 	return fn
 }
 
+/*
+** ===========================================================================
+**
+** Function:        
+**     IsIniSectionExist
+**
+** Description: 
+**     Check if section/key exists in INI
+** 
+** Input: 
+**     Filename, name of section, show error
+** 
+** Output: 
+**     (1<<31)+line if exist, 0 if not
+** 
+** Return value: 
+**     See output
+** 
+** Side effects:
+**     Create a temp buffer
+**
+** ===========================================================================
+*/
 
 macro IsIniSectionExist(file, name, showerror)
 {
@@ -70,6 +117,30 @@ macro IsIniSectionExist(file, name, showerror)
 	return 0
 }
 
+/*
+** ===========================================================================
+**
+** Function:        
+**     GetIniSectionAllValues
+**
+** Description: 
+**     Get all values of ini section/key
+** 
+** Input: 
+**     Filename, name of section/key, show error
+** 
+** Output: 
+**     Sections as hbuf
+** 
+** Return value: 
+**     buff
+** 
+** Side effects:
+**     Create a temp buffer
+**
+** ===========================================================================
+*/
+
 macro GetIniSectionAllValues(file, names, showerror)
 {
 	tmp = IsIniSectionExist(file, names, showerror)
@@ -101,6 +172,30 @@ macro GetIniSectionAllValues(file, names, showerror)
 	return buff
 }
 
+/*
+** ===========================================================================
+**
+** Function:        
+**     IsIniValueExist
+**
+** Description: 
+**     Check if value of INI section/key exists
+** 
+** Input: 
+**     Filename, name of section/key, name of value, show error
+** 
+** Output: 
+**     String with value content
+** 
+** Return value: 
+**     ret
+** 
+** Side effects:
+**     Create a temp buffer
+**
+** ===========================================================================
+*/
+
 macro IsIniValueExist(file, names, namev, showerror)
 {
 	ret = ""
@@ -119,6 +214,31 @@ macro IsIniValueExist(file, names, namev, showerror)
 		UtilitiesShowMessage("VALUE_NOT_EXISTS", "@file@:@names@->@namev@")
 	return ret
 }
+
+/*
+** ===========================================================================
+**
+** Function:        
+**     GetIniSectionValue
+**
+** Description: 
+**     Get data of value of INI section/key
+** 
+** Input: 
+**     Filename, name of section/key, name of value, show error
+** 
+** Output: 
+**     String with content of value
+** 
+** Return value: 
+**     ret
+** 
+** Side effects:
+**     Create a temp buffer
+**
+** ===========================================================================
+*/
+
 
 macro GetIniSectionValue(file, names, namev, showerror)
 {

@@ -16,6 +16,30 @@
 ** ===========================================================================
 */
 
+/*
+** ===========================================================================
+**
+** Function:        
+**     StringGetLastPathItem
+**
+** Description: 
+**     Get last path item
+** 
+** Input: 
+**     Path
+** 
+** Output: 
+**     Last item
+** 
+** Return value: 
+**     strmid
+** 
+** Side effects:
+**     None
+**
+** ===========================================================================
+*/
+
 macro StringGetLastPathItem(str)
 {
 	len = strlen(str)

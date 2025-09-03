@@ -16,10 +16,58 @@
 ** ===========================================================================
 */
 
+/*
+** ===========================================================================
+**
+** Function:        
+**     ProjectGetName
+**
+** Description: 
+**     Get curr project name
+** 
+** Input: 
+**     none
+** 
+** Output: 
+**     Last item of currproj path
+** 
+** Return value: 
+**     See output
+** 
+** Side effects:
+**     None
+**
+** ===========================================================================
+*/
+
 macro ProjectGetName()
 {
 	return StringGetLastPathItem(GetProjName(GetCurrentProj()))
 }
+
+/*
+** ===========================================================================
+**
+** Function:        
+**     ProjectGetValue
+**
+** Description: 
+**     Get value of project in INI
+** 
+** Input: 
+**     Project name, value
+** 
+** Output: 
+**     Data of project info value
+** 
+** Return value: 
+**     t
+** 
+** Side effects:
+**     Create a temp buffer
+**
+** ===========================================================================
+*/
 
 macro ProjectGetValue(projectname,val)
 {
@@ -34,6 +82,30 @@ macro ProjectGetValue(projectname,val)
 	return t
 }
 
+/*
+** ===========================================================================
+**
+** Function:        
+**     ProjectGetType
+**
+** Description: 
+**     Get type of project
+** 
+** Input: 
+**     Project name
+** 
+** Output: 
+**     Type of project
+** 
+** Return value: 
+**     temp
+** 
+** Side effects:
+**     Create a temp buffer
+**
+** ===========================================================================
+*/
+
 macro ProjectGetType(projectname)
 {
 	temp = ProjectGetValue(projectname, "Type")
@@ -41,6 +113,30 @@ macro ProjectGetType(projectname)
 		return "None"
 	return temp
 }
+
+/*
+** ===========================================================================
+**
+** Function:        
+**     ProjectGetPath
+**
+** Description: 
+**     Get path of project
+** 
+** Input: 
+**     Project path
+** 
+** Output: 
+**     Path of project
+** 
+** Return value: 
+**     temp
+** 
+** Side effects:
+**     Create a temp buffer
+**
+** ===========================================================================
+*/
 
 macro ProjectGetPath(projectname)
 {
