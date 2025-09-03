@@ -17,7 +17,7 @@
 */
 
 
-macro UtilitiesShowMessage(error, details)
+macro UtilitiesShowMessage(error, details, show)
 {
 	//This part is moved from INI file, no matter what we do we should show an error
 	//from one of these from INI parsing...
@@ -39,40 +39,52 @@ macro UtilitiesShowMessage(error, details)
 
 	if (error == "FILE_NOT_EXISTS")
 	{
-		if (language == "EN")
+		if (show == 1)
 		{
-			msg("@FILE_NOT_EXISTS_EN@: @details@")
-		}
-		else if (language == "CN")
-		{
-			msg("@FILE_NOT_EXISTS_CN@: @details@")
+			if (language == "EN")
+			{
+				msg("@FILE_NOT_EXISTS_EN@: @details@")
+			}
+			else if (language == "CN")
+			{
+				msg("@FILE_NOT_EXISTS_CN@: @details@")
+			}
 		}
 	}
 	else if (error == "KEY_NOT_EXISTS")
 	{
-		if (language == "EN")
+		if (show == 1)
 		{
-			msg("@KEY_NOT_EXISTS_EN@: @details@")
-		}
-		else if (language == "CN")
-		{
-			msg("@KEY_NOT_EXISTS_CN@: @details@")
+			if (language == "EN")
+			{
+				msg("@KEY_NOT_EXISTS_EN@: @details@")
+			}
+			else if (language == "CN")
+			{
+				msg("@KEY_NOT_EXISTS_CN@: @details@")
+			}
 		}
 	}
 	else if (error == "VALUE_NOT_EXISTS")
 	{
-		if (language == "EN")
+		if (show == 1)
 		{
-			msg("@VALUE_NOT_EXISTS_EN@: @details@")
-		}
-		else if (language == "CN")
-		{
-			msg("@VALUE_NOT_EXISTS_CN@: @details@")
+			if (language == "EN")
+			{
+				msg("@VALUE_NOT_EXISTS_EN@: @details@")
+			}
+			else if (language == "CN")
+			{
+				msg("@VALUE_NOT_EXISTS_CN@: @details@")
+			}
 		}
 	}
 	else
 	{
-		err = GetIniSectionValue("Strings_@language@.ini", "Strings", error)
-		msg("@err@: @details@")
+		if (show == 1)
+		{
+			err = GetIniSectionValue("Strings_@language@.ini", "Strings", error, show)
+			msg("@err@: @details@")
+		}
 	}
 }

@@ -18,13 +18,14 @@
 
 macro ProjectGetValue(projectname,val)
 {
-	if (IsIniSectionExist("User_Projects.ini", projectname) == 0)
+	tmp = IsIniSectionExist("User_Projects.ini", projectname, 0)
+	if (tmp == 0)
 	{
-		UtilitiesShowMessage("PROJECT_NOT_EXISTING")	
-		stop
+		UtilitiesShowMessage("PROJECT_NOT_EXISTING", projectname, 1)	
+		return ""
 	}
 
-	t = GetIniSectionValue("User_Projects.ini", projectname, val)
+	t = GetIniSectionValue("User_Projects.ini", projectname, val, 0)
 	return t
 }
 

@@ -30,7 +30,7 @@ macro GetIniPath(file)
 
 	if (err == 0) //still not exist?
 	{
-		UtilitiesShowMessage("FILE_NOT_EXISTS", file)
+		UtilitiesShowMessage("FILE_NOT_EXISTS", file, 1)
 		return ""
 	}
 
@@ -38,7 +38,7 @@ macro GetIniPath(file)
 }
 
 
-macro IsIniSectionExist(file, name)
+macro IsIniSectionExist(file, name, showerror)
 {
 	section_str = "[" # name # "]"
 
@@ -47,7 +47,7 @@ macro IsIniSectionExist(file, name)
 	hbuf = OpenCache(fn)
 
 	sr = SearchInBuf(hbuf, section_str, 0,0, TRUE, FALSE, TRUE)
-
+	
 	if (sr != "")
 	{
 		line=0
@@ -59,20 +59,22 @@ macro IsIniSectionExist(file, name)
 			section_str_get = GetBufLine(hbuf,line)
 		}
 		SaveBufAs(hbuf, GetTempFolder() # "\\~temp_INIValues")
+		SetBufDirty(hbuf, 0)
 		CloseBuf(hbuf)
 		return 0x80000000 + line //0x80000000 -> exist in file
 	}
 	SaveBufAs(hbuf, GetTempFolder() # "\\~temp_INIValues")
+	SetBufDirty(hbuf, 0)
 	CloseBuf(hbuf)
-	UtilitiesShowMessage("KEY_NOT_EXISTS", "@file@:@name@")
+	UtilitiesShowMessage("KEY_NOT_EXISTS", "@file@:@name@", showerror)
 	return 0
 }
 
-macro GetIniSectionAllValues(file, names)
+macro GetIniSectionAllValues(file, names, showerror)
 {
-	tmp = IsIniSectionExist(file, names)
+	tmp = IsIniSectionExist(file, names, showerror)
 	buff = NewBuf("~temp_INIValues")
-	if (tmp >= 0x80000000)
+	if (tmp >= 0x80000000 && tmp != 0)
 	{
 		line = tmp-0x80000000
 		fn = GetIniPath(file)
@@ -90,22 +92,27 @@ macro GetIniSectionAllValues(file, names)
 			AppendBufLine (buff,section_str_get)
 		}
 	}
-	SaveBufAs(hbuf, GetTempFolder() # "\\~temp_INIValues")
-	CloseBuf(hbuf)
+	if (tmp != 0)
+	{
+		SaveBufAs(hbuf, GetTempFolder() # "\\~temp_INIValues")
+		SetBufDirty(hbuf, 0)
+		CloseBuf(hbuf)
+	}
 	return buff
 }
 
-macro IsIniValueExist(file, names, namev)
+macro IsIniValueExist(file, names, namev, showerror)
 {
 	ret = ""
-	if (IsIniSectionExist(file, names) >= 0x80000000)
+	if (IsIniSectionExist(file, names, showerror) >= 0x80000000)
 	{
-		sect_vals = GetIniSectionAllValues(file, names)
+		sect_vals = GetIniSectionAllValues(file, names, showerror)
 		str = "^@namev@\\s*="
 		srch = SearchInBuf(sect_vals, str, 0,0, TRUE, TRUE, FALSE)
 		if (srch != "")
 			ret = GetBufLine(sect_vals,srch.lnFirst)
 		SaveBufAs(sect_vals, GetTempFolder() # "\\~temp_INIValues")
+		SetBufDirty(sect_vals, 0)
 		CloseBuf(sect_vals)
 	}
 	if (ret == "")
@@ -113,12 +120,12 @@ macro IsIniValueExist(file, names, namev)
 	return ret
 }
 
-macro GetIniSectionValue(file, names, namev)
+macro GetIniSectionValue(file, names, namev, showerror)
 {
 	ret = ""
-	if (IsIniSectionExist(file, names) >= 0x80000000)
+	if (IsIniSectionExist(file, names, showerror) >= 0x80000000)
 	{
-		tmp = IsIniValueExist(file, names, namev)
+		tmp = IsIniValueExist(file, names, namev, shoewrror)
 		if (tmp != "")
 		{
 			p = 0
