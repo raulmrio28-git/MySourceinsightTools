@@ -5,15 +5,20 @@ macro fwh_si_f1()
 	//msg("key from kb: @key@")
 	if (project_type == "Base")
 	{
-		if (key == 49)
+		if (key == 49) //1
 			BaseWriteReason()
-		if (key == 48)
+		else if (key == 50) //2
+			ShellExecute("explore", GetMacrosFolder(), "", "", 1)
+		else if (key == 51) //3
+			ShellExecute("explore", GetConfigFolder(), "", "", 1)
+		else if (key == 52) //4
+			ShellExecute("explore", GetNotesFolder(), "", "", 1)
+		else if (key == 53) //5
+			ShellExecute("explore", GetNotesFolder() # "\\Personal", "", "", 1)
+		else if (key == 54) //6
 		{
 			key2 = GetKey()
-			if (key2 == 121 || key2 == 89) //commit with add files
-				BaseCommitToGitAdd()	
-			else if (key2 == 110 || key2 == 78)
-				BaseCommitToGitNoAdd()
-		}
+			SetBufSelText(GetCurrentBuf(), "@key2@")
+		}		
 	}
 }

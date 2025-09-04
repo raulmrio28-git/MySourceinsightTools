@@ -36,3 +36,7 @@ macro GetTempFolder()	{return GetRoot() # "\\Temp"}
 macro GetConfigFolder()		{return GetRoot() # "\\Config"}
 macro GetConfigUserFolder()		{return GetRoot() # "\\Config\\User"} 
 macro GetToolsFolder()		{return GetRoot() # "\\Tools"}
+macro GetHelpFolder()	{return GetRoot() # "\\Help"}
+macro GetHelpFolder()	{return GetRoot() # "\\Help"}
+macro GetNotesFolder() 	{return GetRoot() # "\\Notes"}
+macro GetMacrosFolder() 	{return GetRoot() # "\\Macros"}

@@ -56,3 +56,32 @@ macro StringGetLastPathItem(str)
 
 	return strmid(str, len, strlen(str)-end_cut)
 }
+
+macro StringConvertFromEscape(str)
+{
+	new_str = ""
+
+	len = strlen(str)
+	curr = 0
+
+	while(curr<len)
+	{
+		if (str[curr] == "\\")
+		{
+			curr = curr+1
+			if (curr >= len)
+				return new_str
+			if (str[curr] == "n")
+				new_str = new_str # CharFromKey(13)
+			else if (str[curr] == "t")
+				new_str = new_str # CharFromKey(9)
+			else if (str[curr] == "\\")
+				new_str = new_str # "\\"
+		}
+		else
+			new_str = new_str # str[curr]
+		curr = curr+1
+	}
+
+	return new_str
+}

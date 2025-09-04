@@ -31,7 +31,7 @@
 			EnhancedVertScrollBar="1"
 			ScalePercent="100"
 			PopupToolbar="0"
-			SortWindowMenuByName="0"
+			SortWindowMenuByName="1"
 			SmoothScrolling="1"
 			AccelSmoothScrolling="1"
 			ShowChangemarks="1"

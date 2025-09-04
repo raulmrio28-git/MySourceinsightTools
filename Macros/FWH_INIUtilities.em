@@ -11,6 +11,7 @@
 **
 ** when          who             what, where, why
 ** ----------    ------------    --------------------------------
+** 2025/09/04    konakona        Add help folder
 ** 2025/09/02    konakona        Created.
 **
 ** ===========================================================================
@@ -49,6 +50,12 @@ macro GetIniPath(file)
 	if (err == 0) //is file in user folder?
 	{
 		fn = GetConfigUserFolder() # "\\" # file
+		err = FileExists(fn)
+	}
+
+	if (err == 0) //is file in help folder?
+	{
+		fn = GetHelpFolder() # "\\" # file
 		err = FileExists(fn)
 	}
 

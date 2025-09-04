@@ -23,5 +23,7 @@ macro fwh_si_f10()
 		BaseCommitToGitAdd()	
 	else if (key2 == 110 || key2 == 78)
 		BaseCommitToGitNoAdd()
+	else if (key2 == 104 || key2 == 72)
+		GetHelp("Git")
 }
 
