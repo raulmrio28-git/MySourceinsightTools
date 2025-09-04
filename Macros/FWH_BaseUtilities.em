@@ -18,6 +18,30 @@
 ** ===========================================================================
 */
 
+/*
+** ===========================================================================
+**
+** Function:        
+**     BaseWriteReason
+**
+** Description: 
+**     Write reason in base file for wip
+** 
+** Input: 
+**     none
+** 
+** Output: 
+**     none
+** 
+** Return value: 
+**     none
+** 
+** Side effects:
+**     Reason
+**
+** ===========================================================================
+*/
+
 macro BaseWriteReason()
 {
 	sz = Ask("Enter reason:")

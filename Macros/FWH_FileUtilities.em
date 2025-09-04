@@ -944,3 +944,43 @@ macro OpenCache(file)
 	}
 	return hbuf
 }
+
+/*
+** ===========================================================================
+**
+** Function:        
+**     CloseNonDirty
+**
+** Description: 
+**     Close saved files
+** 
+** Input: 
+**     none
+** 
+** Output: 
+**     none
+** 
+** Return value: 
+**     none
+** 
+** Side effects:
+**     Closed saved files
+**
+** ===========================================================================
+*/
+
+macro CloseNonDirty()
+{
+	hwnd = GetCurrentWnd()
+	while (hwnd != 0)
+	{
+		hwndNext = GetNextWnd(hwnd)
+		
+		hbuf = GetWndBuf(hwnd)
+		if (!IsBufDirty(hbuf))
+			CloseBuf(hbuf)
+		
+		hwnd = hwndNext
+	}
+}
+
