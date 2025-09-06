@@ -11,7 +11,7 @@
 		DPI="96"
 		>
 		<WindowRect Left="-8" Top="-8" Right="1928" Bottom="1040" />
-		<NormalWindowRect Left="253" Top="-15" Right="1211" Bottom="781" />
+		<NormalWindowRect Left="734" Top="649" Right="1118" Bottom="937" />
 	</MainWindow>
 	<Options>
 		<WindowTabOptions IsVisible="1" ShowPathInfo="1" SortOrder="Usage" />
@@ -29,7 +29,7 @@
 				<Contents/>
 			</Top>
 			<Right>
-				<Rect Left="1382" Top="93" Right="1920" Bottom="1006" />
+				<Rect Left="1377" Top="93" Right="1920" Bottom="1006" />
 				<Contents>
 					<PanelHost
 						Title="Project Files"
@@ -40,7 +40,7 @@
 						PanelCount="4"
 						idPalActive="ProjectFilePanel"
 						>
-						<WindowRect Left="1385" Top="93" Right="1920" Bottom="608" />
+						<WindowRect Left="1380" Top="93" Right="1920" Bottom="611" />
 						<PredockRect Left="1154" Top="821" Right="1979" Bottom="1571" />
 						<Panels>
 							<Panel
@@ -89,7 +89,7 @@
 						PanelCount="1"
 						idPalActive="BookmarkPanel"
 						>
-						<WindowRect Left="1385" Top="608" Right="1920" Bottom="1006" />
+						<WindowRect Left="1380" Top="611" Right="1920" Bottom="1006" />
 						<PredockRect Left="150" Top="315" Right="750" Bottom="600" />
 						<Panels>
 							<Panel id="BookmarkPanel" IsHidden="0" ViewToolbar="1" />
@@ -104,7 +104,7 @@
 						PanelCount="1"
 						idPalActive="RelationPanel"
 						>
-						<WindowRect Left="1678" Top="93" Right="1920" Bottom="1006" />
+						<WindowRect Left="1674" Top="93" Right="1920" Bottom="1006" />
 						<PredockRect Left="100" Top="400" Right="450" Bottom="800" />
 						<Panels>
 							<Panel

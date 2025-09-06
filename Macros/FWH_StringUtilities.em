@@ -40,6 +40,30 @@
 ** ===========================================================================
 */
 
+/*
+** ===========================================================================
+**
+** Function:        
+**     StringGetLastPathItem
+**
+** Description: 
+**     Get last path item
+** 
+** Input: 
+**     Path string
+** 
+** Output: 
+**     Last item of path string
+** 
+** Return value: 
+**     strmid
+** 
+** Side effects:
+**     None
+**
+** ===========================================================================
+*/
+
 macro StringGetLastPathItem(str)
 {
 	len = strlen(str)
@@ -56,6 +80,30 @@ macro StringGetLastPathItem(str)
 
 	return strmid(str, len, strlen(str)-end_cut)
 }
+
+/*
+** ===========================================================================
+**
+** Function:        
+**     StringConvertFromEscape
+**
+** Description: 
+**     Convert excaped string to regular string
+** 
+** Input: 
+**     String
+** 
+** Output: 
+**     Converted string
+** 
+** Return value: 
+**     new_str
+** 
+** Side effects:
+**     None
+**
+** ===========================================================================
+*/
 
 macro StringConvertFromEscape(str)
 {
@@ -85,6 +133,30 @@ macro StringConvertFromEscape(str)
 
 	return new_str
 }
+
+/*
+** ===========================================================================
+**
+** Function:        
+**     StringGetExtension
+**
+** Description: 
+**     Get extension of file from string
+** 
+** Input: 
+**     String
+** 
+** Output: 
+**     File extension
+** 
+** Return value: 
+**     tmp
+** 
+** Side effects:
+**     None
+**
+** ===========================================================================
+*/
 
 macro StringGetExtension(str)
 {
