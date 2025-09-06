@@ -23,15 +23,15 @@
 		/>
 	<DisplayPreferences>
 		<GeneralDisplayOptions
-			StatusBar="0"
+			StatusBar="1"
 			PageNumInStatusbar="0"
 			MainToolBar="1"
 			HorizScrollBar="1"
 			VertScrollBar="1"
 			EnhancedVertScrollBar="1"
 			ScalePercent="100"
-			PopupToolbar="0"
-			SortWindowMenuByName="1"
+			PopupToolbar="1"
+			SortWindowMenuByName="0"
 			SmoothScrolling="1"
 			AccelSmoothScrolling="1"
 			ShowChangemarks="1"
@@ -45,7 +45,7 @@
 			MonospaceTabs="1"
 			MaximizeNewWindows="1"
 			MonoFontView="0"
-			Gradients="1"
+			Gradients="0"
 			VisualThemes="1"
 			CompressLineHeights="1"
 			Animations="1"
@@ -56,13 +56,13 @@
 			AlwaysShowOutlineMarks="0"
 			OutlineIndent="0"
 			OutlineAllBlocks="1"
-			ShowNestingLines="0"
+			ShowNestingLines="1"
 			ShowCurLineMarker="0"
 			PanelToolbarBottom="1"
 			ShowSearchBar="0"
 			ShowSearchProjBar="0"
 			EnableTransparentPanels="0"
-			EnableOverviews="0"
+			EnableOverviews="1"
 			EolMarkerType="0"
 			FontLigatures="1"
 			>
@@ -70,14 +70,14 @@
 				name="Segoe UI"
 				bold="1"
 				psize="11"
-				fpfamily="0"
-				charset="1"
+				fpfamily="34"
+				charset="0"
 				/>
 		</GeneralDisplayOptions>
 		<ScrollBarOptions
 			AllowScaling="0"
 			ShowSymbols="1"
-			ShowLines="1"
+			ShowLines="0"
 			ShowChangeMarks="1"
 			ShowSelection="1"
 			ShowInactiveLines="1"
@@ -113,8 +113,8 @@
 			/>
 		<SourceTipOptions>
 			<FontAndColor
-				TextColor="#000000"
-				BackColor="#f8f8f8"
+				TextColor="#f0f0f0"
+				BackColor="#505050"
 				>
 				<Font name="Segoe UI" psize="9" fpfamily="0" charset="1" />
 			</FontAndColor>
@@ -182,23 +182,23 @@
 		ScaleNestedParens="1"
 		/>
 	<DisplayColors>
-		<Item Name="DefaultText" Color="#ebebeb" />
-		<Item Name="WindowBackground" Color="#354171" />
-		<Item Name="SelectionBar" Color="#292929" />
+		<Item Name="DefaultText" Color="#e1e1e1" />
+		<Item Name="WindowBackground" Color="#373737" />
+		<Item Name="SelectionBar" Color="#524941" />
 		<Item Name="PrintedDefaultText" Color="#000000" />
 		<Item Name="PrintedWindowBackground" Color="#ffffff" />
-		<Item Name="ChangeMarks" Color="#57afd5" />
-		<Item Name="SavedChangeMarks" Color="#cc4041" />
-		<Item Name="CurrentLineIndicator" Color="#4e4e4e" />
-		<Item Name="EndofFile" Color="#1e1e1e" />
-		<Item Name="ApplicationBackground" Color="#3c3c3c" />
-		<Item Name="FrameText" Color="#f0f0f0" />
-		<Item Name="FrameBackground" Color="#3c3c3c" />
+		<Item Name="ChangeMarks" Color="#918e2b" />
+		<Item Name="SavedChangeMarks" Color="#526558" />
+		<Item Name="CurrentLineIndicator" Color="#4b4b4b" />
+		<Item Name="EndofFile" Color="#4e4e4e" />
+		<Item Name="ApplicationBackground" Color="#414141" />
+		<Item Name="FrameText" Color="#e0e0d6" />
+		<Item Name="FrameBackground" Color="#414141" />
 		<DefaultPanelFontAndColor
-			TextColor="#aaaaaa"
-			BackColor="#000000"
+			TextColor="#000000"
+			BackColor="#ffffff"
 			>
-			<Font name="Segoe UI" psize="8" fpfamily="34" charset="0" />
+			<Font name="Segoe UI" psize="9" fpfamily="0" charset="1" />
 		</DefaultPanelFontAndColor>
 	</DisplayColors>
 	<FilePreferences
@@ -206,10 +206,10 @@
 		ReloadFiles="1"
 		PromptReload="1"
 		UseEofChar="0"
-		PromptEolFix="0"
-		MakeBackup="0"
+		PromptEolFix="1"
+		MakeBackup="1"
 		CleanupBackup="1"
-		BackupAgingDays="365"
+		BackupAgingDays="1095"
 		SaveAllPromptEach="0"
 		SaveAllNoPrompt="0"
 		SaveOnInactive="0"
@@ -218,7 +218,7 @@
 		SaveOverRO="0"
 		SavePromptOnModified="1"
 		TrimWhiteSpace="0"
-		EditReadOnly="1"
+		EditReadOnly="0"
 		ConfirmDelete="1"
 		BlockBinaryFiles="1"
 		OpenBackupsAsReadOnly="1"
@@ -447,18 +447,21 @@
 	</Menus>
 	<Keymaps>
 		<Main>
-			<item Command="fwh_si_f10" Keycode="F10" Allocated="1" />
-			<item Command="CloseNonDirty" Keycode="F12" Allocated="1" />
-			<item Command="Open Project..." Keycode="(CA)P" />
-			<item Command="InsUpdateInHistory" Keycode="(C)U" Allocated="1" />
-			<item Command="fwh_si_f2" Keycode="F2" Allocated="1" />
-			<item Command="wip" Keycode="(C)W" Allocated="1" />
-			<item Command="fwh_si_f1" Keycode="F1" Allocated="1" />
+			<item Command="InsFunHeader" Keycode="(CA)H" Allocated="1" />
+			<item Command="InsFileHeader" Keycode="(CA)F" Allocated="1" />
 			<item Command="InsIfdef" Keycode="(CA)I" Allocated="1" />
 			<item Command="Load Layout A" Keycode="(CS)F1" />
 			<item Command="Load Layout B" Keycode="(CS)F2" />
 			<item Command="Load Layout C" Keycode="(CS)F3" />
 			<item Command="Load Layout D" Keycode="(CS)F4" />
+			<item Command="Search Backward" Keycode="F3" />
+			<item Command="Search Forward" Keycode="F4" />
+			<item Command="Go To Line..." Keycode="F5" />
+			<item Command="Tile Two Windows" Keycode="F6" />
+			<item Command="Activate Project Symbol List" Keycode="F7" />
+			<item Command="Highlight Word" Keycode="F8" />
+			<item Command="Full Screen" Keycode="F11" />
+			<item Command="Incremental Search..." Keycode="F12" />
 			<item Command="Mono Font View" Keycode="(A)F12" />
 			<item Command="SDK Help..." Keycode="(A)F1" />
 			<item Command="Exit" Keycode="(A)F4" />
@@ -467,7 +470,6 @@
 			<item Command="Sort Symbol Window" Keycode="(A)F7" />
 			<item Command="Symbol Window" Keycode="(A)F8" />
 			<item Command="Zoom Window" Keycode="(A)F10" />
-			<item Command="Select Next Window" Keycode="(S)F2" />
 			<item Command="Search Backward for Selection" Keycode="(S)F3" />
 			<item Command="Search Forward for Selection" Keycode="(S)F4" />
 			<item Command="Select Word" Keycode="(S)F5" />
@@ -546,6 +548,8 @@
 			<item Command="Cursor Left" Keycode="(N)Left" />
 			<item Command="Cursor Right" Keycode="Right" />
 			<item Command="Cursor Right" Keycode="(N)Right" />
+			<item Command="Word Left" Keycode="(C)Left" />
+			<item Command="Word Right" Keycode="(C)Right" />
 			<item Command="Function Up" Keycode="(N)-" />
 			<item Command="Function Down" Keycode="(N)+" />
 			<item Command="Select Block" Keycode="(C)-" />
@@ -564,7 +568,9 @@
 			<item Command="Go Back" Keycode="(A)," />
 			<item Command="Go Forward" Keycode="(A)." />
 			<item Command="Repeat Typing" Keycode="(C)\" />
+			<item Command="New" Keycode="(C)N" />
 			<item Command="Open..." Keycode="(C)O" />
+			<item Command="Close" Keycode="(C)W" />
 			<item Command="Close All" Keycode="(CS)W" />
 			<item Command="Next File..." Keycode="(CS)N" />
 			<item Command="Save" Keycode="(C)S" />
@@ -573,7 +579,9 @@
 			<item Command="Reload File" Keycode="(CS)O" />
 			<item Command="Activate Project Symbol List" Keycode="(A)G" />
 			<item Command="Activate Symbol Window" Keycode="(A)L" />
+			<item Command="Renumber..." Keycode="(C)R" />
 			<item Command="Search..." Keycode="(C)F" />
+			<item Command="Search Files..." Keycode="(CS)F" />
 			<item Command="Lookup References..." Keycode="(C)/" />
 			<item Command="Search Web..." Keycode="(CA)W" />
 			<item Command="Activate Search Bar" Keycode="(AS)F" />
@@ -588,6 +596,8 @@
 			<item Command="Jump To Definition" Keycode="(C)=" />
 			<item Command="Jump To Prototype..." Keycode="(A)-" />
 			<item Command="Jump To Base Type" Keycode="(A)0" />
+			<item Command="Jump To Caller" Keycode="(CA)C" />
+			<item Command="Jump To Reference" Keycode="(CA)L" />
 			<item Command="Toggle Insert Mode" Keycode="Ins" />
 			<item Command="Bookmark..." Keycode="(C)M" />
 			<item Command="Symbol Info..." Keycode="(A)/" />
@@ -595,18 +605,24 @@
 			<item Command="Last Window" Keycode="(CS)Tab" />
 			<item Command="File Type Options..." Keycode="(A)Y" />
 			<item Command="Smart Rename..." Keycode="(C)&apos;" />
+			<item Command="Complete Snippet" Keycode="(C)E" />
 			<item Command="Complete Symbol" Keycode="(C)8" />
 			<item Command="Incremental Search..." Keycode="(C)," />
 			<item Command="New Project..." Keycode="(AS)N" />
+			<item Command="Open Project..." Keycode="(AS)P" />
 			<item Command="Close Project" Keycode="(AS)W" />
 			<item Command="Add File..." Keycode="(AS)A" />
 			<item Command="Remove File..." Keycode="(AS)R" />
 			<item Command="Synchronize Files..." Keycode="(AS)S" />
 			<item Command="Backspace" Keycode="BackSpace" />
 			<item Command="Backspace" Keycode="(S)BackSpace" />
+			<item Command="Delete Character" Keycode="Del" />
 			<item Command="Delete Character" Keycode="(N)Del" />
+			<item Command="Copy Line" Keycode="(C)K" />
 			<item Command="Copy Line Right" Keycode="(CS)K" />
 			<item Command="Paste Line" Keycode="(C)P" />
+			<item Command="Cut Line" Keycode="(C)U" />
+			<item Command="Insert Line" Keycode="(C)I" />
 			<item Command="Cut Line Right" Keycode="(C);" />
 			<item Command="Cut Word" Keycode="(C)," />
 			<item Command="Insert Line Before Next" Keycode="(C)Space" />
@@ -616,37 +632,39 @@
 			<item Command="Copy To Clip..." Keycode="(C)Del" />
 			<item Command="Paste From Clip..." Keycode="(C)Ins" />
 			<item Command="Restore Lines" Keycode="(A)D" />
+			<item Command="Drag Line Up" Keycode="(C)Up" />
+			<item Command="Drag Line Down" Keycode="(C)Down" />
+			<item Command="Toggle Comment Lines" Keycode="(C)7" />
 			<item Command="Redraw Screen" Keycode="(CA)Space" />
+			<item Command="Zoom In" Keycode="(CS)." />
+			<item Command="Zoom Out" Keycode="(CS)," />
 			<item Command="Copy" Keycode="mouse(LR)" />
 			<item Command="Select To" Keycode="(S)mouse(L)" />
 			<item Command="Make Column Selection" Keycode="(A)mouse(L)" />
+			<item Command="Symbol Info..." Keycode="(C)mouse(R+SEL)" />
 			<item Command="Enter" Keycode="Enter" />
 			<item Command="Enter" Keycode="Enter" />
 			<item Command="Enter" Keycode="(N)Enter" />
 			<item Command="Tab" Keycode="Tab" />
 			<item Command="Back Tab" Keycode="(S)Tab" />
 			<item Command="Simple Tab" Keycode="(CA)Tab" />
-			<item Command="InsFileHeader" Keycode="(CA)F" Allocated="1" />
-			<item Command="InsFunHeader" Keycode="(CA)H" Allocated="1" />
-			<item Command="InsEditReasonComment" Keycode="(CA)M" Allocated="1" />
+			<item Command="Help..." Keycode="(CA)F1" />
+			<item Command="Select Next Window" Keycode="mouse(T1)" />
+			<item Command="Select Previous Window" Keycode="mouse(T2)" />
+			<item Command="fwh_si_f2" Keycode="F2" Allocated="1" />
+			<item Command="fwh_si_f10" Keycode="F10" Allocated="1" />
+			<item Command="Indent Left" Keycode="(CA)Left" />
+			<item Command="Indent Right" Keycode="(CA)Right" />
 			<item
 				Command="InsEditReasonCommentHash"
-				Keycode="(CS)M"
+				Keycode="(CS)E"
 				Allocated="1"
 				/>
-			<item Command="CommentLineOutHash" Keycode="(CS)C" Allocated="1" />
-			<item Command="CtrlB" Keycode="(C)B" Allocated="1" />
-			<item Command="Comment Lines" Keycode="(CA)C" />
-			<item Command="Symbol Info..." Keycode="(C)mouse(R+SEL)" />
-			<item Command="Toggle Comment Lines" Keycode="(C)7" />
-			<item Command="Zoom In" Keycode="(CS)." />
-			<item Command="Zoom Out" Keycode="(CS)," />
-			<item Command="Jump To Reference" Keycode="(CA)L" />
-			<item Command="Indent Left" Keycode="(C)Left" />
-			<item Command="Indent Right" Keycode="(C)Right" />
-			<item Command="Select Previous Window" Keycode="mouse(T2+SEL)" />
-			<item Command="Select Previous Window" Keycode="(S)F1" />
-			<item Command="Select Next Window" Keycode="mouse(T1+SEL)" />
+			<item Command="InsEditReasonComment" Keycode="(CA)E" Allocated="1" />
+			<item Command="Key Assignments..." Keycode="(CA)K" />
+			<item Command="InsUpdateInHistory" Keycode="(CA)U" Allocated="1" />
+			<item Command="InsHeaderDef" Keycode="(CA)N" Allocated="1" />
+			<item Command="AutoExpand" Keycode="(CA)X" Allocated="1" />
 		</Main>
 	</Keymaps>
 	<CustomCommands>
@@ -971,7 +989,7 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="0"
@@ -989,8 +1007,8 @@
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="Custom Command Output"
@@ -1007,7 +1025,7 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
@@ -1018,15 +1036,15 @@
 			ShowRefHighlights="0"
 			TabWidth="4"
 			MarginWidth="120"
-			IndentWidth="1"
+			IndentWidth="4"
 			AutoInsertPairs="0"
 			ParsePatternSymbolType=""
 			AutoIndentMode="1"
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="Search Results"
@@ -1043,10 +1061,10 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
-			UseSymbolPane="0"
+			UseSymbolPane="1"
 			UseOverview="0"
 			AllowAutocomplete="1"
 			AllowSmartPaste="0"
@@ -1054,19 +1072,19 @@
 			ShowRefHighlights="0"
 			TabWidth="4"
 			MarginWidth="120"
-			IndentWidth="1"
+			IndentWidth="4"
 			AutoInsertPairs="0"
 			ParsePatternSymbolType=""
 			AutoIndentMode="1"
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="C Source File"
-			FileFilter="*.c;*.cc;*.h;*.bld;*.eas;*.xas;*.zas;*.eis;*.xis;*.zis"
+			FileFilter=""
 			Language="ANSI C Language"
 			ParsePattern=""
 			WordWrap="0"
@@ -1079,30 +1097,30 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
 			UseOverview="1"
 			AllowAutocomplete="1"
-			AllowSmartPaste="0"
+			AllowSmartPaste="1"
 			AllowSnippets="1"
 			ShowRefHighlights="0"
 			TabWidth="4"
 			MarginWidth="120"
-			IndentWidth="1"
+			IndentWidth="4"
 			AutoInsertPairs="1"
 			ParsePatternSymbolType=""
 			AutoIndentMode="2"
-			IndentOpenBrace="0"
-			IndentCloseBrace="0"
+			IndentOpenBrace="1"
+			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="C/C++ Source File"
-			FileFilter="*.c;*.h;*.cpp;*.hpp;*.cxx;*.hxx;*.scf;*.res"
+			FileFilter="*.c;*.h;*.cpp;*.hpp;*.cc;*.cxx;*.hxx;*.hh"
 			Language="C/C++ Language"
 			ParsePattern=""
 			WordWrap="0"
@@ -1115,7 +1133,7 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
@@ -1126,15 +1144,15 @@
 			ShowRefHighlights="0"
 			TabWidth="4"
 			MarginWidth="120"
-			IndentWidth="1"
+			IndentWidth="4"
 			AutoInsertPairs="1"
 			ParsePatternSymbolType=""
 			AutoIndentMode="2"
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="C# Source File"
@@ -1151,7 +1169,7 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
@@ -1169,12 +1187,12 @@
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="Objective-C File"
-			FileFilter="*.m"
+			FileFilter="*.m;*.mm"
 			Language="Objective-C"
 			ParsePattern=""
 			WordWrap="0"
@@ -1187,7 +1205,7 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
@@ -1205,12 +1223,12 @@
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="Python File"
-			FileFilter="*.py,*.pe"
+			FileFilter="*.py"
 			Language="Python"
 			ParsePattern=""
 			WordWrap="0"
@@ -1223,7 +1241,7 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
@@ -1234,15 +1252,15 @@
 			ShowRefHighlights="0"
 			TabWidth="4"
 			MarginWidth="120"
-			IndentWidth="1"
+			IndentWidth="4"
 			AutoInsertPairs="1"
 			ParsePatternSymbolType=""
 			AutoIndentMode="2"
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="Interface Definition File"
@@ -1259,7 +1277,7 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
@@ -1277,8 +1295,8 @@
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="x86 Asm Source File"
@@ -1295,7 +1313,7 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
@@ -1313,16 +1331,16 @@
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="Java Source File"
-			FileFilter="*.java;*.jav;*.kt"
+			FileFilter="*.java;*.jav"
 			Language="Java Language"
 			ParsePattern=""
 			WordWrap="0"
-			ExpandTabs="1"
+			ExpandTabs="0"
 			EnterKeyIsEOL="1"
 			StatusbarMode="0"
 			AddToProject="1"
@@ -1331,7 +1349,7 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
@@ -1342,15 +1360,15 @@
 			ShowRefHighlights="0"
 			TabWidth="4"
 			MarginWidth="120"
-			IndentWidth="1"
+			IndentWidth="4"
 			AutoInsertPairs="1"
 			ParsePatternSymbolType=""
 			AutoIndentMode="2"
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="JavaScript File"
@@ -1367,7 +1385,7 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
@@ -1385,8 +1403,8 @@
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="Perl Source File"
@@ -1403,7 +1421,7 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
@@ -1421,8 +1439,8 @@
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="PHP File"
@@ -1439,7 +1457,7 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
@@ -1457,8 +1475,8 @@
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="Active Server Page"
@@ -1475,7 +1493,7 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
@@ -1493,8 +1511,8 @@
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="Visual Basic Source File"
@@ -1511,7 +1529,7 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
@@ -1529,8 +1547,8 @@
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="Batch File"
@@ -1547,7 +1565,7 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
@@ -1565,8 +1583,8 @@
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="INI File"
@@ -1583,7 +1601,7 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
@@ -1601,8 +1619,8 @@
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="Link Def File"
@@ -1619,7 +1637,7 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
@@ -1637,12 +1655,12 @@
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="Make File"
-			FileFilter="*.mak;makefile;*.mk;*.CFG;*.cfg;*.modules;*.third-party"
+			FileFilter="*.mak;makefile"
 			Language="Makefile"
 			ParsePattern=""
 			WordWrap="0"
@@ -1655,7 +1673,7 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
@@ -1666,15 +1684,15 @@
 			ShowRefHighlights="0"
 			TabWidth="4"
 			MarginWidth="120"
-			IndentWidth="1"
+			IndentWidth="4"
 			AutoInsertPairs="1"
 			ParsePatternSymbolType=""
 			AutoIndentMode="1"
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="JSON File"
@@ -1691,7 +1709,7 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
@@ -1702,15 +1720,15 @@
 			ShowRefHighlights="0"
 			TabWidth="4"
 			MarginWidth="120"
-			IndentWidth="1"
+			IndentWidth="4"
 			AutoInsertPairs="1"
 			ParsePatternSymbolType=""
 			AutoIndentMode="1"
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="Resource File"
@@ -1727,7 +1745,7 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
@@ -1745,8 +1763,8 @@
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="Source Insight Macro File"
@@ -1763,10 +1781,10 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
-			UseSymbolPane="0"
+			UseSymbolPane="1"
 			UseOverview="1"
 			AllowAutocomplete="1"
 			AllowSmartPaste="0"
@@ -1774,15 +1792,15 @@
 			ShowRefHighlights="0"
 			TabWidth="4"
 			MarginWidth="120"
-			IndentWidth="1"
+			IndentWidth="4"
 			AutoInsertPairs="1"
 			ParsePatternSymbolType=""
 			AutoIndentMode="1"
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="Plain Text"
@@ -1799,7 +1817,7 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
@@ -1817,8 +1835,8 @@
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="HTML File"
@@ -1835,7 +1853,7 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
@@ -1853,8 +1871,8 @@
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="Cascading Style Sheet"
@@ -1871,7 +1889,7 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
@@ -1889,8 +1907,8 @@
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="Output File"
@@ -1907,7 +1925,7 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
@@ -1925,8 +1943,8 @@
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="Token Macro File"
@@ -1943,7 +1961,7 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
@@ -1961,25 +1979,25 @@
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="XML File"
-			FileFilter="*.xml;*.xsl;*.wxml;*.wxss"
+			FileFilter="*.xml;*.xsl"
 			Language="XML"
 			ParsePattern=""
 			WordWrap="0"
 			ExpandTabs="0"
 			EnterKeyIsEOL="1"
 			StatusbarMode="0"
-			AddToProject="1"
+			AddToProject="0"
 			EmulateScreenFontsForPrinting="1"
 			LineUpWhiteSpace="1"
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
@@ -1990,15 +2008,15 @@
 			ShowRefHighlights="0"
 			TabWidth="4"
 			MarginWidth="120"
-			IndentWidth="1"
+			IndentWidth="4"
 			AutoInsertPairs="1"
 			ParsePatternSymbolType=""
 			AutoIndentMode="1"
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="VHDL File"
@@ -2015,7 +2033,7 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
@@ -2033,8 +2051,8 @@
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 		<Type
 			Name="SI Tags File"
@@ -2051,7 +2069,7 @@
 			VisibleTabs="0"
 			VisibleSpaces="0"
 			VisibleEOL="0"
-			ShowLineNumbers="1"
+			ShowLineNumbers="0"
 			ShowRightMargin="0"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
@@ -2069,100 +2087,38 @@
 			IndentOpenBrace="1"
 			IndentCloseBrace="1"
 			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-		</Type>
-		<Type
-			Name="as_cfg"
-			FileFilter="*gradle"
-			Language="None"
-			ParsePattern=""
-			WordWrap="0"
-			ExpandTabs="0"
-			EnterKeyIsEOL="1"
-			StatusbarMode="0"
-			AddToProject="1"
-			EmulateScreenFontsForPrinting="1"
-			LineUpWhiteSpace="1"
-			VisibleTabs="0"
-			VisibleSpaces="0"
-			VisibleEOL="0"
-			ShowLineNumbers="1"
-			ShowRightMargin="0"
-			ShowPageBreaks="0"
-			UseSymbolPane="0"
-			UseOverview="0"
-			AllowAutocomplete="1"
-			AllowSmartPaste="0"
-			AllowSnippets="1"
-			ShowRefHighlights="0"
-			TabWidth="4"
-			MarginWidth="120"
-			IndentWidth="1"
-			AutoInsertPairs="0"
-			ParsePatternSymbolType=""
-			AutoIndentMode="1"
-			IndentOpenBrace="1"
-			IndentCloseBrace="1"
-			>
-			<ScreenFont name="Consolas" psize="12" fpfamily="49" charset="0" />
-			<PrinterFont name="Consolas" psize="12" fpfamily="49" charset="0" />
+			<ScreenFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
 	</FileTypes>
 	<Styles
 		StyleAppVer="4.00.0141"
 		>
 		<Style Name="Default Text" />
+		<Style Name="Number" TextColor="#fe9e83" />
+		<Style Name="Operator" />
+		<Style Name="Delimiter" TextColor="#ffffff" />
+		<Style Name="Comment" TextColor="#8c9d8c" />
 		<Style
-			Name="Number"
-			FontName="Consolas"
-			FontPitchFamily="1"
-			FontCharset="0"
-			ParentStyle="Ref to Const"
+			Name="String"
+			FixedWhiteSpace="0"
+			TextColor="#d9dda2"
+			BackColor="#505050"
 			/>
-		<Style Name="Operator" TextColor="#00b700" />
-		<Style Name="Delimiter" TextColor="#fbfe81" />
-		<Style Name="Comment" TextColor="#b0b0b0" />
-		<Style Name="String" FixedWhiteSpace="0" TextColor="#e35b65" />
-		<Style Name="Keyword" TextColor="#008000" />
-		<Style Name="Control" Bold="1" TextColor="#0080c0" />
+		<Style Name="Keyword" TextColor="#00c1c1" />
+		<Style Name="Control" />
 		<Style Name="Special" Bold="1" Italic="1" />
-		<Style Name="Boolean" TextColor="#ff6fff" />
-		<Style Name="Debug" TextColor="#ff0000" Italic="1" Underline="Dotted" />
-		<Style
-			Name="Null Value"
-			TextColor="#ff0000"
-			ParentStyle="Ref to Const"
-			/>
+		<Style Name="Boolean" TextColor="#fe9e83" />
+		<Style Name="Debug" Underline="Dotted" TextColor="#ffff00" />
+		<Style Name="Null Value" ParentStyle="Ref to Const" />
 		<Style Name="System" ParentStyle="Reference" />
-		<Style Name="Declaration" Bold="1" TextColor="#00ff00" />
-		<Style
-			Name="Ref To Local"
-			TextColor="#00b3b3"
-			ParentStyle="Reference"
-			/>
-		<Style Name="Reference" TextColor="#00ea00" />
+		<Style Name="Declaration" TextColor="#ffefb0" />
+		<Style Name="Ref To Local" ParentStyle="Reference" />
+		<Style Name="Reference" TextColor="#7ebd6f" />
 		<Style Name="Directive" ParentStyle="Control" />
-		<Style
-			Name="Line Number"
-			TextColor="#808080"
-			FontName="Consolas"
-			FontPitchFamily="1"
-			FontCharset="0"
-			/>
-		<Style
-			Name="Highlight"
-			TextColor="#000000"
-			BackColor="#ffff00"
-			Bold="1"
-			/>
-		<Style
-			Name="Symbol Characters"
-			FontName="Microsoft Sans Serif"
-			FontPitchFamily="0"
-			FontCharset="0"
-			ParentStyle="Operator"
-			/>
+		<Style Name="Line Number" TextColor="#7c7c7c" />
+		<Style Name="Highlight" TextColor="#0f0f0f" BackColor="#ffff6c" />
+		<Style Name="Symbol Characters" ParentStyle="Operator" />
 		<Style
 			Name="Declare Template Parameter"
 			Underline="Single"
@@ -2170,8 +2126,7 @@
 			/>
 		<Style
 			Name="Ref to Parameter"
-			Bold="1"
-			Underline="Dotted"
+			TextColor="#6cb6ff"
 			ParentStyle="Ref To Local"
 			/>
 		<Style Name="Declare Template" ParentStyle="Declare Function" />
@@ -2184,7 +2139,7 @@
 			Bold="1"
 			ParentStyle="Reference"
 			/>
-		<Style Name="Selection" TextColor="#ffffff" BackColor="#509e9e" />
+		<Style Name="Selection" TextColor="#abf3a0" BackColor="#5f5f5f" />
 		<Style Name="Declare Namespace" ParentStyle="Declaration" />
 		<Style Name="Ref to Namespace" ParentStyle="Reference" />
 		<Style Name="Declare Local" ParentStyle="Declaration" />
@@ -2197,17 +2152,17 @@
 		<Style Name="Declare Method Inline" ParentStyle="Declare Function" />
 		<Style
 			Name="Declare Function"
-			Scale="140"
+			Scale="130"
+			Bold="1"
 			KeepWithNextLine="1"
-			TextColor="#ffffff"
+			TextColor="#b5fe96"
 			ParentStyle="Declaration"
 			/>
 		<Style Name="Declare Macro" ParentStyle="Declaration" />
 		<Style
 			Name="Declare Struct"
-			Scale="140"
+			Scale="120"
 			KeepWithNextLine="1"
-			TextColor="#ffff00"
 			ParentStyle="Declaration"
 			/>
 		<Style Name="Declare Union" ParentStyle="Declare Struct" />
@@ -2237,27 +2192,30 @@
 		<Style Name="Declare Resource" ParentStyle="Declaration" />
 		<Style Name="File" ParentStyle="Declaration" />
 		<Style Name="Declare Custom Tag" ParentStyle="Declaration" />
-		<Style Name="Ref to Func" Bold="1" ParentStyle="Reference" />
-		<Style Name="Ref to Macro" ParentStyle="Ref to Func" />
+		<Style Name="Ref to Func" Bold="0" ParentStyle="Reference" />
+		<Style
+			Name="Ref to Macro"
+			Inverse="0"
+			Underline="None"
+			ParentStyle="Ref to Func"
+			/>
 		<Style Name="Ref to Struct" ParentStyle="Reference" />
-		<Style Name="Ref to Union" ParentStyle="Ref to Struct" />
-		<Style Name="Ref to Typedef" ParentStyle="Ref to Struct" />
+		<Style Name="Ref to Union" ParentStyle="Reference" />
+		<Style
+			Name="Ref to Typedef"
+			TextColor="#80ffff"
+			ParentStyle="Reference"
+			/>
 		<Style
 			Name="Ref to Global Var"
-			Bold="1"
-			Italic="1"
-			TextColor="#ff48ff"
+			TextColor="#ffbf91"
 			ParentStyle="Reference"
 			/>
-		<Style
-			Name="Ref to Const"
-			TextColor="#ff4646"
-			ParentStyle="Reference"
-			/>
+		<Style Name="Ref to Const" ParentStyle="Number" />
 		<Style Name="Ref to Enum" ParentStyle="Reference" />
 		<Style Name="Ref to Custom" ParentStyle="Reference" />
 		<Style Name="Ref to EdMacro" ParentStyle="Reference" />
-		<Style Name="Ref to Class" ParentStyle="Ref to Struct" />
+		<Style Name="Ref to Class" ParentStyle="Reference" />
 		<Style Name="Ref to Method" Italic="1" ParentStyle="Ref to Func" />
 		<Style Name="Ref to EnumConst" ParentStyle="Ref to Const" />
 		<Style Name="Ref to Proto" ParentStyle="Ref to Func" />
@@ -2265,7 +2223,7 @@
 		<Style Name="Ref to Search" ParentStyle="Reference" />
 		<Style Name="Ref to Label" ParentStyle="Reference" />
 		<Style Name="Ref to Member" Italic="1" ParentStyle="Reference" />
-		<Style Name="Ref to Interface" ParentStyle="Ref to Class" />
+		<Style Name="Ref to Interface" ParentStyle="Reference" />
 		<Style Name="Ref to Resource" ParentStyle="Reference" />
 		<Style Name="Ref to File" ParentStyle="Reference" />
 		<Style
@@ -2305,13 +2263,14 @@
 			FontCharset="0"
 			ParentStyle="Comment"
 			/>
-		<Style Name="Comment Right" Italic="1" ParentStyle="Comment" />
+		<Style Name="Comment Right" ParentStyle="Comment" />
 		<Style Name="Ref to Base Class" ParentStyle="Reference" />
 		<Style Name="Ref to Inline Type" ParentStyle="Reference" />
 		<Style Name="Inactive Code" TextColor="#808080" />
 		<Style
 			Name="Declare Parameter"
 			Underline="Single"
+			TextColor="#6cb6ff"
 			ParentStyle="Declaration"
 			/>
 		<Style
@@ -2334,13 +2293,9 @@
 		<Style Name="Ref to Method Prototype" ParentStyle="Ref to Method" />
 		<Style
 			Name="Comment To Do"
-			Scale="120"
 			Bold="1"
-			TextColor="#000000"
+			TextColor="#58765f"
 			BackColor="#ffff00"
-			FontName="Arial"
-			FontPitchFamily="2"
-			FontCharset="0"
 			ParentStyle="Comment"
 			/>
 		<Style Name="Ref to IDL Module" ParentStyle="Reference" />
@@ -2363,7 +2318,7 @@
 		<Style Name="Comment Multi Line" ParentStyle="Comment" />
 		<Style Name="Parentheses" ParentStyle="Delimiter" />
 		<Style Name="HTML Body Text" FixedWhiteSpace="0" />
-		<Style Name="HTML Tag" Bold="1" TextColor="#00ffff" />
+		<Style Name="HTML Tag" TextColor="#008000" Bold="1" />
 		<Style Name="Standard Property" ParentStyle="Ref to Member" />
 		<Style Name="Standard Function" ParentStyle="Ref to Func" />
 		<Style Name="Standard Object" ParentStyle="Ref to Class" />
@@ -2414,14 +2369,36 @@
 		<Style Name="Instruction" ParentStyle="Control" />
 		<Style
 			Name="Reference Highlight"
-			TextColor="#000000"
-			BackColor="#0080c0"
+			TextColor="#ffff00"
+			BackColor="#007d00"
 			/>
-		<Style Name="Declare VHDL Entity" ParentStyle="Declaration" />
-		<Style Name="Declare VHDL Architecture" ParentStyle="Declaration" />
-		<Style Name="Declare VHDL Component" ParentStyle="Declaration" />
+		<Style
+			Name="Declare VHDL Entity"
+			Scale="140"
+			ShadowColor="#c0c0c0"
+			KeepWithNextLine="1"
+			ParentStyle="Declaration"
+			/>
+		<Style
+			Name="Declare VHDL Architecture"
+			Scale="140"
+			ShadowColor="#c0c0c0"
+			KeepWithNextLine="1"
+			ParentStyle="Declaration"
+			/>
+		<Style
+			Name="Declare VHDL Component"
+			ShadowColor="#c0c0c0"
+			KeepWithNextLine="1"
+			ParentStyle="Declaration"
+			/>
 		<Style Name="Declare VHDL Process" ParentStyle="Declaration" />
-		<Style Name="Declare VHDL Config" ParentStyle="Declaration" />
+		<Style
+			Name="Declare VHDL Config"
+			ShadowColor="#c0c0c0"
+			KeepWithNextLine="1"
+			ParentStyle="Declaration"
+			/>
 		<Style Name="Ref to VHDL Entity" ParentStyle="Reference" />
 		<Style Name="Ref to VHDL Architecture" ParentStyle="Reference" />
 		<Style Name="Ref to VHDL Component" ParentStyle="Reference" />
@@ -2430,10 +2407,26 @@
 		<Style
 			Name="End of Line"
 			Scale="90"
-			BackColor="#e0e0e0"
+			BackColor="#707070"
 			ParentStyle="Operator"
 			/>
 		<Style Name="Visible Tabs and Spaces" TextColor="#a0a0a0" />
+		<Style Name="Declare Procedure" ParentStyle="Declare Function" />
+		<Style
+			Name="Declare Procedure Specification"
+			ParentStyle="Declare Prototype"
+			/>
+		<Style Name="Declare Record" ParentStyle="Declare Struct" />
+		<Style Name="Declare Task" ParentStyle="Declare Function" />
+		<Style Name="Ref to Procedure" ParentStyle="Ref to Func" />
+		<Style
+			Name="Ref to Procedure Specification"
+			ParentStyle="Ref to Proto"
+			/>
+		<Style Name="Ref to Record" ParentStyle="Ref to Struct" />
+		<Style Name="Ref to Task" ParentStyle="Ref to Func" />
+		<Style Name="Comment Emphasis" Bold="1" ParentStyle="Comment" />
+		<Style Name="Comment URL" Underline="Single" ParentStyle="Comment" />
 		<Style Name="HTML Tag Excerpt" />
 		<Style Name="new comment" />
 	</Styles>
@@ -2457,8 +2450,8 @@
 		NoWarnings="1"
 		RunInBackground="1"
 		RunEveryMinutes="60"
-		AddNewFiles="1"
-		RemoveOldFiles="1"
+		AddNewFiles="0"
+		RemoveOldFiles="0"
 		SyncOnStartup="1"
 		/>
 	<ProjectDefaults
@@ -2502,92 +2495,88 @@
 			<CustomParsing/>
 			<Ranges/>
 			<Keywords>
-				<Item Keyword="#define" Style="Keyword" />
-				<Item Keyword="#elif" Style="Directive" />
-				<Item Keyword="#else" Style="Directive" />
-				<Item Keyword="#endif" Style="Directive" />
-				<Item Keyword="#if" Style="Directive" />
-				<Item Keyword="#ifdef" Style="Directive" />
-				<Item Keyword="#ifndef" Style="Directive" />
-				<Item Keyword="#include" Style="Keyword" />
-				<Item Keyword="#pragma" Style="Keyword" />
-				<Item Keyword="#undef" Style="Keyword" />
 				<Item Keyword="(" Style="Delimiter" />
 				<Item Keyword=")" Style="Delimiter" />
-				<Item Keyword="," Style="Delimiter" />
-				<Item Keyword=";" Style="Delimiter" />
-				<Item Keyword="_Alignas" Style="Keyword" />
-				<Item Keyword="Assert" Style="Debug" />
-				<Item Keyword="_Atomic" Style="Keyword" />
-				<Item Keyword="_Bool" Style="Keyword" />
-				<Item Keyword="_Complex" Style="Keyword" />
-				<Item Keyword="DWORD" Style="Keyword" />
-				<Item Keyword="FALSE" Style="Boolean" />
-				<Item Keyword="FAR" Style="Keyword" />
-				<Item Keyword="_Generic" Style="Keyword" />
-				<Item Keyword="INT" Style="Keyword" />
-				<Item Keyword="_Imaginary" Style="Keyword" />
-				<Item Keyword="LONG" Style="Keyword" />
-				<Item Keyword="NULL" Style="Null Value" />
-				<Item Keyword="_Noreturn" Style="Keyword" />
-				<Item Keyword="SHORT" Style="Keyword" />
-				<Item Keyword="_Static_assert" Style="Keyword" />
-				<Item Keyword="TRUE" Style="Boolean" />
-				<Item Keyword="_Thread_local" Style="Keyword" />
-				<Item Keyword="UINT" Style="Keyword" />
-				<Item Keyword="VOID" Style="Keyword" />
-				<Item Keyword="WORD" Style="Keyword" />
+				<Item Keyword="{" Style="Delimiter" />
+				<Item Keyword="}" Style="Delimiter" />
 				<Item Keyword="[" Style="Delimiter" />
 				<Item Keyword="]" Style="Delimiter" />
-				<Item Keyword="alignof" Style="Keyword" />
-				<Item Keyword="asm" Style="Keyword" />
+				<Item Keyword="," Style="Delimiter" />
+				<Item Keyword=";" Style="Delimiter" />
+				<Item Keyword="__try" Style="Control" />
+				<Item Keyword="__except" Style="Control" />
+				<Item Keyword="__finally" Style="Control" />
+				<Item Keyword="__cdecl" Style="Keyword" />
 				<Item Keyword="__asm" Style="Keyword" />
+				<Item Keyword="_Alignas" Style="Keyword" />
+				<Item Keyword="_Generic" Style="Keyword" />
+				<Item Keyword="_Atomic" Style="Keyword" />
+				<Item Keyword="_Noreturn" Style="Keyword" />
+				<Item Keyword="_Static_assert" Style="Keyword" />
+				<Item Keyword="_Thread_local" Style="Keyword" />
+				<Item Keyword="alignof" Style="Keyword" />
+				<Item Keyword="_Bool" Style="Keyword" />
+				<Item Keyword="_Imaginary" Style="Keyword" />
+				<Item Keyword="_Complex" Style="Keyword" />
+				<Item Keyword="restrict" Style="Keyword" />
+				<Item Keyword="asm" Style="Keyword" />
 				<Item Keyword="assert" Style="Debug" />
+				<Item Keyword="Assert" Style="Debug" />
 				<Item Keyword="auto" Style="Control" />
 				<Item Keyword="bool" Style="Keyword" />
 				<Item Keyword="break" Style="Control" />
 				<Item Keyword="case" Style="Control" />
 				<Item Keyword="catch" Style="Control" />
 				<Item Keyword="cdecl" Style="Keyword" />
-				<Item Keyword="__cdecl" Style="Keyword" />
 				<Item Keyword="char" Style="Keyword" />
 				<Item Keyword="coclass" Style="Control" />
 				<Item Keyword="const" Style="Keyword" />
 				<Item Keyword="continue" Style="Control" />
 				<Item Keyword="cout" Style="Keyword" />
-				<Item Keyword="decltype" Style="Keyword" />
 				<Item Keyword="default" Style="Control" />
+				<Item Keyword="#define" Style="Keyword" />
+				<Item Keyword="decltype" Style="Keyword" />
 				<Item Keyword="do" Style="Control" />
 				<Item Keyword="double" Style="Keyword" />
-				<Item Keyword="dynamic_cast" Style="Keyword" />
+				<Item Keyword="DWORD" Style="Keyword" />
+				<Item Keyword="#elif" Style="Directive" />
 				<Item Keyword="else" Style="Control" />
+				<Item Keyword="#else" Style="Directive" />
+				<Item Keyword="#endif" Style="Directive" />
 				<Item Keyword="enum" Style="Control" />
-				<Item Keyword="__except" Style="Control" />
 				<Item Keyword="extern" Style="Keyword" />
 				<Item Keyword="false" Style="Boolean" />
+				<Item Keyword="FALSE" Style="Boolean" />
+				<Item Keyword="FAR" Style="Keyword" />
 				<Item Keyword="far" Style="Keyword" />
-				<Item Keyword="__finally" Style="Control" />
 				<Item Keyword="float" Style="Keyword" />
 				<Item Keyword="for" Style="Control" />
 				<Item Keyword="fortran" Style="Keyword" />
 				<Item Keyword="goto" Style="Control" />
 				<Item Keyword="huge" Style="Keyword" />
 				<Item Keyword="if" Style="Control" />
+				<Item Keyword="#if" Style="Directive" />
+				<Item Keyword="#ifdef" Style="Directive" />
+				<Item Keyword="#ifndef" Style="Directive" />
+				<Item Keyword="#include" Style="Keyword" />
 				<Item Keyword="inline" Style="Keyword" />
+				<Item Keyword="interrupt" Style="Keyword" />
+				<Item Keyword="INT" Style="Keyword" />
 				<Item Keyword="int" Style="Keyword" />
+				<Item Keyword="int8_t" Style="Keyword" />
 				<Item Keyword="int16_t" Style="Keyword" />
 				<Item Keyword="int32_t" Style="Keyword" />
 				<Item Keyword="int64_t" Style="Keyword" />
-				<Item Keyword="int8_t" Style="Keyword" />
-				<Item Keyword="interface" Style="Control" />
-				<Item Keyword="interrupt" Style="Keyword" />
 				<Item Keyword="intmax_t" Style="Keyword" />
+				<Item Keyword="interface" Style="Control" />
 				<Item Keyword="long" Style="Keyword" />
+				<Item Keyword="NULL" Style="Null Value" />
 				<Item Keyword="near" Style="Keyword" />
 				<Item Keyword="pascal" Style="Keyword" />
+				<Item Keyword="#pragma" Style="Keyword" />
 				<Item Keyword="register" Style="Keyword" />
-				<Item Keyword="restrict" Style="Keyword" />
 				<Item Keyword="return" Style="Control" />
+				<Item Keyword="SHORT" Style="Keyword" />
 				<Item Keyword="short" Style="Keyword" />
 				<Item Keyword="signed" Style="Keyword" />
 				<Item Keyword="sizeof" Style="Keyword" />
@@ -2595,19 +2584,21 @@
 				<Item Keyword="struct" Style="Control" />
 				<Item Keyword="switch" Style="Control" />
 				<Item Keyword="true" Style="Boolean" />
+				<Item Keyword="TRUE" Style="Boolean" />
 				<Item Keyword="try" Style="Control" />
-				<Item Keyword="__try" Style="Control" />
 				<Item Keyword="typedef" Style="Control" />
 				<Item Keyword="typeof" Style="Keyword" />
+				<Item Keyword="UINT" Style="Keyword" />
+				<Item Keyword="#undef" Style="Keyword" />
 				<Item Keyword="uintmax_t" Style="Keyword" />
 				<Item Keyword="union" Style="Control" />
 				<Item Keyword="unsigned" Style="Keyword" />
+				<Item Keyword="VOID" Style="Keyword" />
 				<Item Keyword="void" Style="Keyword" />
 				<Item Keyword="volatile" Style="Keyword" />
 				<Item Keyword="wchar_t" Style="Keyword" />
 				<Item Keyword="while" Style="Control" />
-				<Item Keyword="{" Style="Delimiter" />
-				<Item Keyword="}" Style="Delimiter" />
+				<Item Keyword="WORD" Style="Keyword" />
 			</Keywords>
 		</Language>
 		<Language
@@ -4206,6 +4197,15 @@
 			<CustomParsing/>
 			<Ranges/>
 			<Keywords>
+				<Item Keyword="and" Style="Operator" />
+				<Item Keyword="or" Style="Operator" />
+				<Item Keyword="xor_eq" Style="Operator" />
+				<Item Keyword="not_eq" Style="Operator" />
+				<Item Keyword="xor" Style="Operator" />
+				<Item Keyword="char16_t" Style="Keyword" />
+				<Item Keyword="char32_t" Style="Keyword" />
+				<Item Keyword="compl" Style="Keyword" />
+				<Item Keyword="static_assert" Style="Debug" />
 				<Item Keyword="(" Style="Delimiter" />
 				<Item Keyword=")" Style="Delimiter" />
 				<Item Keyword="{" Style="Delimiter" />
@@ -4286,6 +4286,10 @@
 				<Item Keyword="inline" Style="Keyword" />
 				<Item Keyword="INT" Style="Keyword" />
 				<Item Keyword="int" Style="Keyword" />
+				<Item Keyword="int8_t" Style="Keyword" />
+				<Item Keyword="int16_t" Style="Keyword" />
+				<Item Keyword="int32_t" Style="Keyword" />
+				<Item Keyword="int64_t" Style="Keyword" />
 				<Item Keyword="interface" Style="Control" />
 				<Item Keyword="LONG" Style="Keyword" />
 				<Item Keyword="long" Style="Keyword" />
@@ -4297,6 +4301,7 @@
 				<Item Keyword="__nullptr" Style="Null Value" />
 				<Item Keyword="near" Style="Keyword" />
 				<Item Keyword="new" Style="Control" />
+				<Item Keyword="noexcept" Style="Keyword" />
 				<Item Keyword="operator" Style="Keyword" />
 				<Item Keyword="override" Style="Keyword" />
 				<Item Keyword="PASCAL" Style="Keyword" />
@@ -4335,27 +4340,12 @@
 				<Item Keyword="unsigned" Style="Keyword" />
 				<Item Keyword="using" Style="Keyword" />
 				<Item Keyword="VOID" Style="Keyword" />
-				<Item Keyword="value" Style="Keyword" />
 				<Item Keyword="virtual" Style="Keyword" />
 				<Item Keyword="void" Style="Keyword" />
 				<Item Keyword="volatile" Style="Keyword" />
 				<Item Keyword="wchar_t" Style="Keyword" />
 				<Item Keyword="while" Style="Control" />
 				<Item Keyword="WORD" Style="Keyword" />
-				<Item Keyword="int8_t" Style="Keyword" />
-				<Item Keyword="int16_t" Style="Keyword" />
-				<Item Keyword="int32_t" Style="Keyword" />
-				<Item Keyword="int64_t" Style="Keyword" />
-				<Item Keyword="noexcept" Style="Keyword" />
-				<Item Keyword="and" Style="Operator" />
-				<Item Keyword="or" Style="Operator" />
-				<Item Keyword="xor_eq" Style="Operator" />
-				<Item Keyword="not_eq" Style="Operator" />
-				<Item Keyword="xor" Style="Operator" />
-				<Item Keyword="char16_t" Style="Keyword" />
-				<Item Keyword="char32_t" Style="Keyword" />
-				<Item Keyword="compl" Style="Keyword" />
-				<Item Keyword="static_assert" Style="Debug" />
 			</Keywords>
 		</Language>
 		<Language
@@ -4621,6 +4611,9 @@
 				<Item Keyword="ReformatBuffer" Style="System" />
 				<Item Keyword="Select Regular Expression Engine" Style="System" />
 				<Item Keyword="ExpandPathVariables" Style="System" />
+				<Item Keyword="GetRunCmdLineExitCode" Style="System" />
+				<Item Keyword="SetProjMasterFileList" Style="System" />
+				<Item Keyword="GetProjMasterFileList" Style="System" />
 			</Keywords>
 		</Language>
 		<Language
@@ -7261,6 +7254,7 @@
 				<Item Keyword="and" Style="Keyword" />
 				<Item Keyword="assert" Style="Keyword" />
 				<Item Keyword="def" Style="Keyword" />
+				<Item Keyword="async" Style="Keyword" />
 				<Item Keyword="del" Style="Keyword" />
 				<Item Keyword="exec" Style="Keyword" />
 				<Item Keyword="from" Style="Keyword" />
@@ -7281,7 +7275,6 @@
 				<Item Keyword="self" Style="Keyword" />
 				<Item Keyword="True" Style="Keyword" />
 				<Item Keyword="False" Style="Keyword" />
-				<Item Keyword="async" Style="Keyword" />
 			</Keywords>
 		</Language>
 		<Language
@@ -7616,13 +7609,13 @@
 		<SearchDialogs>
 			<Search
 				RegexType="Source Insight"
-				IgnoreCase="1"
-				UseRegexp="1"
-				WrapAround="0"
+				IgnoreCase="0"
+				UseRegexp="0"
+				WrapAround="1"
 				SelectMatch="1"
 				FindNonMatch="0"
 				FindOnePerLine="0"
-				FindBackward="0"
+				FindBackward="1"
 				FindWholeWords="0"
 				TouchFiles="0"
 				ReplacePreserveCase="0"
@@ -7631,7 +7624,7 @@
 				SkipComments="0"
 				OnlyComments="0"
 				SkipDeadCode="0"
-				FindSubdirs="1"
+				FindSubdirs="0"
 				SkipStrings="0"
 				ResultFileName="1"
 				ResultLineNumber="0"
@@ -7641,9 +7634,9 @@
 				ResultNormalizeFileNames="1"
 				/>
 			<LookupReferences
-				SearchMethod="Regular Expression"
+				SearchMethod="Look Up Reference"
 				RegexType="Source Insight"
-				IgnoreCase="1"
+				IgnoreCase="0"
 				FindWholeWords="1"
 				SkipComments="0"
 				OnlyComments="0"
@@ -7654,7 +7647,7 @@
 				ResultFileName="1"
 				ResultLineNumber="0"
 				ResultLineText="1"
-				ResultContainer="0"
+				ResultContainer="1"
 				ResultSourceLinks="1"
 				ResultNormalizeFileNames="1"
 				/>
@@ -7719,94 +7712,94 @@
 			<Toolbars>
 				<Toolbar
 					Name="Browse"
-					Width="76"
+					Width="64"
 					Ordinal="0"
 					IsVisible="1"
 					NewRow="0"
 					/>
 				<Toolbar
-					Name="Edit"
+					Name="File"
 					Width="168"
 					Ordinal="1"
 					IsVisible="1"
 					NewRow="0"
 					/>
 				<Toolbar
-					Name="Search"
-					Width="188"
+					Name="Edit"
+					Width="144"
 					Ordinal="2"
 					IsVisible="1"
 					NewRow="0"
 					/>
 				<Toolbar
-					Name="Navigation"
-					Width="132"
+					Name="Search"
+					Width="160"
 					Ordinal="3"
 					IsVisible="1"
 					NewRow="0"
 					/>
 				<Toolbar
-					Name="Symbols"
-					Width="135"
+					Name="Navigation"
+					Width="112"
 					Ordinal="4"
 					IsVisible="1"
 					NewRow="0"
 					/>
 				<Toolbar
-					Name="Window"
-					Width="157"
+					Name="Symbols"
+					Width="160"
 					Ordinal="5"
 					IsVisible="1"
 					NewRow="0"
 					/>
 				<Toolbar
-					Name="Help"
-					Width="76"
+					Name="Window"
+					Width="112"
 					Ordinal="6"
+					IsVisible="1"
+					NewRow="0"
+					/>
+				<Toolbar
+					Name="Help"
+					Width="64"
+					Ordinal="7"
 					IsVisible="0"
 					NewRow="0"
 					/>
 				<Toolbar
 					Name="View"
-					Width="57"
-					Ordinal="7"
+					Width="280"
+					Ordinal="8"
 					IsVisible="1"
 					NewRow="0"
 					/>
 				<Toolbar
 					Name="Source Control"
-					Width="175"
-					Ordinal="8"
-					IsVisible="0"
-					NewRow="0"
-					/>
-				<Toolbar
-					Name="Build"
-					Width="132"
+					Width="146"
 					Ordinal="9"
 					IsVisible="0"
 					NewRow="0"
 					/>
 				<Toolbar
-					Name="Layout"
-					Width="77"
+					Name="Build"
+					Width="112"
 					Ordinal="10"
-					IsVisible="1"
+					IsVisible="0"
 					NewRow="0"
 					/>
 				<Toolbar
 					Name="Outline"
-					Width="9"
+					Width="112"
 					Ordinal="11"
 					IsVisible="1"
 					NewRow="0"
 					/>
 				<Toolbar
-					Name="File"
-					Width="967"
+					Name="Layout"
+					Width="160"
 					Ordinal="12"
 					IsVisible="1"
-					NewRow="1"
+					NewRow="0"
 					/>
 			</Toolbars>
 		</MainToolbar>
@@ -7819,8 +7812,8 @@
 		FooterPerColumn="1"
 		PrintWithColor="1"
 		PrintSyntaxFormatting="1"
-		CoverText="&amp;F"
-		HeaderText="&amp;F&amp;/&amp;D  &amp;T"
+		CoverText="&amp;F&amp;/&amp;D  &amp;T"
+		HeaderText="&amp;F"
 		FooterText="Page &amp;P"
 		Landscape="0"
 		LeftMargin="3600"
@@ -7837,16 +7830,80 @@
 		ListParams="0"
 		SortBySymbolName="1"
 		>
-		<SymbolTypes All="1" />
+		<SymbolTypes>
+			<Type Name="Function" />
+			<Type Name="Macro" />
+			<Type Name="Structure" />
+			<Type Name="Union" />
+			<Type Name="Type Definition" />
+			<Type Name="Variable" />
+			<Type Name="Constant" />
+			<Type Name="Enumeration" />
+			<Type Name="Custom Tag" />
+			<Type Name="Editor Macro" />
+			<Type Name="Class" />
+			<Type Name="Member Function" />
+			<Type Name="Enum Constant" />
+			<Type Name="Function Prototype" />
+			<Type Name="#-Directive" />
+			<Type Name="Search Result" />
+			<Type Name="Label" />
+			<Type Name="Data Member" />
+			<Type Name="Interface" />
+			<Type Name="Resource" />
+			<Type Name="File" />
+			<Type Name="Class Placeholder" />
+			<Type Name="Inline Type Reference" />
+			<Type Name="Base Class Reference" />
+			<Type Name="Directory" />
+			<Type Name="Function Template" />
+			<Type Name="Class Template" />
+			<Type Name="Class Template Placeholder" />
+			<Type Name="Package" />
+			<Type Name="Namespace" />
+			<Type Name="Token Macro" />
+			<Type Name="Code Block" />
+			<Type Name="Parameter" />
+			<Type Name="Parsing Error" />
+			<Type Name="HTML or XML Element" />
+			<Type Name="HTML Title" />
+			<Type Name="Member Function Prototype" />
+			<Type Name="IDL Module" />
+			<Type Name="IDL Library" />
+			<Type Name="IDL Interface" />
+			<Type Name="C++ Template" />
+			<Type Name="Template Parameter" />
+			<Type Name="Imported Package" />
+			<Type Name="CSS Rule Selector" />
+			<Type Name="C# Class Property" />
+			<Type Name="C# Indexer" />
+			<Type Name="C# Event" />
+			<Type Name="VHDL Entity" />
+			<Type Name="VHDL Architecture" />
+			<Type Name="VHDL Component" />
+			<Type Name="VHDL Process" />
+			<Type Name="VHDL Configuration" />
+			<Type Name="Type Reference" />
+			<Type Name="External Variable" />
+			<Type Name="Alias" />
+			<Type Name="Alias Target" />
+			<Type Name="Type Parameter" />
+			<Type Name="Macro Event" />
+			<Type Name="Lambda Function" />
+			<Type Name="Captured Variable" />
+			<Type Name="Clip" />
+			<Type Name="Snippet" />
+			<Type Name="Editor Macro Function" />
+		</SymbolTypes>
 	</ProjectReport>
 	<SymbolPane
 		Width="168"
-		TextColor="#aaaaaa"
-		BackColor="#000000"
+		TextColor="#d0d0d0"
+		BackColor="#373737"
 		ShowChanges="1"
 		ShowLongFunctions="1"
 		>
-		<Font name="Segoe UI" psize="8" fpfamily="34" charset="0" />
+		<Font name="Calibri" psize="10" fpfamily="0" charset="0" />
 		<SymbolTypes All="1" />
 		<SymbolSorting
 			SortMode="1"
@@ -8114,10 +8171,10 @@
 			ConfirmDelete="0"
 			/>
 		<ListDisplay
-			TextColor="#aaaaaa"
-			BackColor="#000000"
+			TextColor="#d0d0d0"
+			BackColor="#373737"
 			>
-			<Font name="Segoe UI" psize="8" fpfamily="34" charset="0" />
+			<Font name="Segoe UI" psize="9" fpfamily="0" charset="0" />
 		</ListDisplay>
 	</BookmarkWindow>
 	<SnippetWindow>
@@ -8133,10 +8190,10 @@
 			SortBy="Name"
 			>
 			<ListDisplay
-				TextColor="#aaaaaa"
-				BackColor="#000000"
+				TextColor="#d0d0d0"
+				BackColor="#373737"
 				>
-				<Font name="Segoe UI" psize="8" fpfamily="34" charset="0" />
+				<Font name="Segoe UI" psize="9" fpfamily="0" charset="0" />
 			</ListDisplay>
 		</SnippetWindowOptions>
 	</SnippetWindow>
@@ -8149,10 +8206,10 @@
 		ExpandSnippetVars="1"
 		>
 		<ListDisplay
-			TextColor="#aaaaaa"
-			BackColor="#000000"
+			TextColor="#d0d0d0"
+			BackColor="#373737"
 			>
-			<Font name="Segoe UI" psize="8" fpfamily="34" charset="0" />
+			<Font name="Segoe UI" psize="9" fpfamily="0" charset="0" />
 		</ListDisplay>
 	</ClipWindow>
 	<ContextWindow
@@ -8164,13 +8221,13 @@
 		ShowOutlining="1"
 		PercentScale="100"
 		ShowBaseStructure="1"
-		BackColor="#354171"
+		BackColor="#2b293a"
 		>
 		<ListDisplay
-			TextColor="#aaaaaa"
-			BackColor="#000000"
+			TextColor="#d0d0d0"
+			BackColor="#373737"
 			>
-			<Font name="Segoe UI" psize="8" fpfamily="34" charset="0" />
+			<Font name="Segoe UI" psize="9" fpfamily="0" charset="0" />
 		</ListDisplay>
 		<TrackingOptions tracktype="1" InComments="0" InStrings="0" InAnyFile="0" />
 	</ContextWindow>
@@ -8185,10 +8242,10 @@
 		FileCompareMethod="CompareSizeAndDate"
 		>
 		<ListDisplay
-			TextColor="#aaaaaa"
-			BackColor="#000000"
+			TextColor="#d0d0d0"
+			BackColor="#373737"
 			>
-			<Font name="Segoe UI" psize="8" fpfamily="34" charset="0" />
+			<Font name="Segoe UI" psize="9" fpfamily="0" charset="0" />
 		</ListDisplay>
 	</DirectoryCompareWindow>
 	<FileCompareWindow
@@ -8199,33 +8256,33 @@
 		ShowScrollBar="1"
 		ShowNestingLines="1"
 		PercentScale="100"
-		BackColor="#354171"
+		BackColor="#373737"
 		ShowSymbolPane="1"
-		SymbolPaneWidth="180"
+		SymbolPaneWidth="144"
 		DiffCmdLine="&quot;%PROGRAM_DIR%\sidiff.exe&quot; -C -b -n"
 		AllowEdits="0"
 		>
 		<ListDisplay
-			TextColor="#aaaaaa"
-			BackColor="#000000"
+			TextColor="#d0d0d0"
+			BackColor="#373737"
 			>
-			<Font name="Segoe UI" psize="8" fpfamily="34" charset="0" />
+			<Font name="Segoe UI" psize="9" fpfamily="0" charset="0" />
 		</ListDisplay>
 	</FileCompareWindow>
 	<ProjectFileWindow
 		IsLocked="0"
-		ShowFileDate="0"
-		ShowFileSize="0"
-		ShowDirName="0"
+		ShowFileDate="1"
+		ShowFileSize="1"
+		ShowDirName="1"
 		ShowMetrics="1"
-		CodeMetricsType="10"
+		CodeMetricsType="1"
 		SortColumn="0"
 		>
 		<ListDisplay
-			TextColor="#aaaaaa"
-			BackColor="#000000"
+			TextColor="#d0d0d0"
+			BackColor="#373737"
 			>
-			<Font name="Segoe UI" psize="8" fpfamily="34" charset="0" />
+			<Font name="Segoe UI" psize="9" fpfamily="0" charset="0" />
 		</ListDisplay>
 	</ProjectFileWindow>
 	<ProjectFileTypeWindow
@@ -8237,10 +8294,10 @@
 		>
 		<Sort SortType="6" Invert="0" />
 		<ListDisplay
-			TextColor="#aaaaaa"
-			BackColor="#000000"
+			TextColor="#d0d0d0"
+			BackColor="#373737"
 			>
-			<Font name="Segoe UI" psize="8" fpfamily="34" charset="0" />
+			<Font name="Segoe UI" psize="9" fpfamily="0" charset="0" />
 		</ListDisplay>
 	</ProjectFileTypeWindow>
 	<ProjectFolderWindow
@@ -8251,10 +8308,10 @@
 		SplitPercent="50"
 		>
 		<ListDisplay
-			TextColor="#aaaaaa"
-			BackColor="#000000"
+			TextColor="#d0d0d0"
+			BackColor="#373737"
 			>
-			<Font name="Segoe UI" psize="8" fpfamily="34" charset="0" />
+			<Font name="Segoe UI" psize="9" fpfamily="0" charset="0" />
 		</ListDisplay>
 	</ProjectFolderWindow>
 	<ProjectSymbolWindow
@@ -8262,71 +8319,13 @@
 		ShowFile="1"
 		Metric="Lines of Code"
 		>
-		<SymbolTypes>
-			<Type Name="Function" />
-			<Type Name="Macro" />
-			<Type Name="Structure" />
-			<Type Name="Union" />
-			<Type Name="Type Definition" />
-			<Type Name="Variable" />
-			<Type Name="Constant" />
-			<Type Name="Enumeration" />
-			<Type Name="Custom Tag" />
-			<Type Name="Editor Macro" />
-			<Type Name="Class" />
-			<Type Name="Member Function" />
-			<Type Name="Enum Constant" />
-			<Type Name="Function Prototype" />
-			<Type Name="#-Directive" />
-			<Type Name="Search Result" />
-			<Type Name="Label" />
-			<Type Name="Data Member" />
-			<Type Name="Interface" />
-			<Type Name="Resource" />
-			<Type Name="File" />
-			<Type Name="Directory" />
-			<Type Name="Function Template" />
-			<Type Name="Class Template" />
-			<Type Name="Package" />
-			<Type Name="Namespace" />
-			<Type Name="Token Macro" />
-			<Type Name="Code Block" />
-			<Type Name="Parameter" />
-			<Type Name="Parsing Error" />
-			<Type Name="HTML or XML Element" />
-			<Type Name="HTML Title" />
-			<Type Name="Member Function Prototype" />
-			<Type Name="IDL Module" />
-			<Type Name="IDL Library" />
-			<Type Name="IDL Interface" />
-			<Type Name="C++ Template" />
-			<Type Name="Template Parameter" />
-			<Type Name="CSS Rule Selector" />
-			<Type Name="C# Class Property" />
-			<Type Name="C# Indexer" />
-			<Type Name="C# Event" />
-			<Type Name="VHDL Entity" />
-			<Type Name="VHDL Architecture" />
-			<Type Name="VHDL Component" />
-			<Type Name="VHDL Process" />
-			<Type Name="VHDL Configuration" />
-			<Type Name="Type Reference" />
-			<Type Name="External Variable" />
-			<Type Name="Alias" />
-			<Type Name="Alias Target" />
-			<Type Name="Type Parameter" />
-			<Type Name="Macro Event" />
-			<Type Name="Captured Variable" />
-			<Type Name="Clip" />
-			<Type Name="Snippet" />
-			<Type Name="Editor Macro Function" />
-		</SymbolTypes>
+		<SymbolTypes All="1" />
 		<Sort SortType="6" Invert="0" />
 		<ListDisplay
-			TextColor="#aaaaaa"
-			BackColor="#000000"
+			TextColor="#d0d0d0"
+			BackColor="#373737"
 			>
-			<Font name="Segoe UI" psize="8" fpfamily="34" charset="0" />
+			<Font name="Segoe UI" psize="9" fpfamily="0" charset="0" />
 		</ListDisplay>
 	</ProjectSymbolWindow>
 	<ProjectSymbolTypeWindow
@@ -8334,71 +8333,13 @@
 		ShowFile="1"
 		Metric="Lines of Code"
 		>
-		<SymbolTypes>
-			<Type Name="Function" />
-			<Type Name="Macro" />
-			<Type Name="Structure" />
-			<Type Name="Union" />
-			<Type Name="Type Definition" />
-			<Type Name="Variable" />
-			<Type Name="Constant" />
-			<Type Name="Enumeration" />
-			<Type Name="Custom Tag" />
-			<Type Name="Editor Macro" />
-			<Type Name="Class" />
-			<Type Name="Member Function" />
-			<Type Name="Enum Constant" />
-			<Type Name="Function Prototype" />
-			<Type Name="#-Directive" />
-			<Type Name="Search Result" />
-			<Type Name="Label" />
-			<Type Name="Data Member" />
-			<Type Name="Interface" />
-			<Type Name="Resource" />
-			<Type Name="File" />
-			<Type Name="Directory" />
-			<Type Name="Function Template" />
-			<Type Name="Class Template" />
-			<Type Name="Package" />
-			<Type Name="Namespace" />
-			<Type Name="Token Macro" />
-			<Type Name="Code Block" />
-			<Type Name="Parameter" />
-			<Type Name="Parsing Error" />
-			<Type Name="HTML or XML Element" />
-			<Type Name="HTML Title" />
-			<Type Name="Member Function Prototype" />
-			<Type Name="IDL Module" />
-			<Type Name="IDL Library" />
-			<Type Name="IDL Interface" />
-			<Type Name="C++ Template" />
-			<Type Name="Template Parameter" />
-			<Type Name="CSS Rule Selector" />
-			<Type Name="C# Class Property" />
-			<Type Name="C# Indexer" />
-			<Type Name="C# Event" />
-			<Type Name="VHDL Entity" />
-			<Type Name="VHDL Architecture" />
-			<Type Name="VHDL Component" />
-			<Type Name="VHDL Process" />
-			<Type Name="VHDL Configuration" />
-			<Type Name="Type Reference" />
-			<Type Name="External Variable" />
-			<Type Name="Alias" />
-			<Type Name="Alias Target" />
-			<Type Name="Type Parameter" />
-			<Type Name="Macro Event" />
-			<Type Name="Captured Variable" />
-			<Type Name="Clip" />
-			<Type Name="Snippet" />
-			<Type Name="Editor Macro Function" />
-		</SymbolTypes>
+		<SymbolTypes All="1" />
 		<Sort SortType="6" Invert="0" />
 		<ListDisplay
-			TextColor="#aaaaaa"
-			BackColor="#000000"
+			TextColor="#d0d0d0"
+			BackColor="#373737"
 			>
-			<Font name="Segoe UI" psize="8" fpfamily="34" charset="0" />
+			<Font name="Segoe UI" psize="9" fpfamily="0" charset="0" />
 		</ListDisplay>
 	</ProjectSymbolTypeWindow>
 	<WindowListWindow
@@ -8407,10 +8348,10 @@
 		ShowSymbol="1"
 		>
 		<ListDisplay
-			TextColor="#aaaaaa"
-			BackColor="#000000"
+			TextColor="#d0d0d0"
+			BackColor="#373737"
 			>
-			<Font name="Segoe UI" psize="8" fpfamily="34" charset="0" />
+			<Font name="Segoe UI" psize="9" fpfamily="0" charset="0" />
 		</ListDisplay>
 	</WindowListWindow>
 	<RelationWindow>
@@ -8418,13 +8359,13 @@
 			IsVisible="0"
 			>
 			<ListOptions
-				TextColor="#aaaaaa"
-				BackColor="#000000"
+				TextColor="#d0d0d0"
+				BackColor="#373737"
 				>
-				<Font name="Segoe UI" psize="8" fpfamily="34" charset="0" />
+				<Font name="Segoe UI" psize="9" fpfamily="0" charset="0" />
 			</ListOptions>
 			<GraphOptions
-				LayoutStyle="2"
+				LayoutStyle="1"
 				NodeStyle="1"
 				LineWeight="1"
 				LineEndType="1"
@@ -8442,7 +8383,7 @@
 					UseDropShadow="1"
 					UseShading="1"
 					>
-					<Font name="宋体" psize="12" fpfamily="2" charset="134" />
+					<Font name="Segoe UI" psize="9" fpfamily="0" charset="1" />
 				</NodeFormat>
 			</GraphOptions>
 		</RelationWindowOptions>
@@ -8501,10 +8442,10 @@
 			<item wildcard="*.xml" />
 		</AsciiModeFiles>
 		<ListDisplay
-			TextColor="#aaaaaa"
-			BackColor="#000000"
+			TextColor="#d0d0d0"
+			BackColor="#373737"
 			>
-			<Font name="Segoe UI" psize="8" fpfamily="34" charset="0" />
+			<Font name="Segoe UI" psize="9" fpfamily="0" charset="0" />
 		</ListDisplay>
 	</FTPWindow>
 </SourceInsightConfiguration>

@@ -11,6 +11,8 @@
 **
 ** when          who             what, where, why
 ** ----------    ------------    --------------------------------
+** 2025-09-03	 konakona		 Comment functions now have their proper
+** 								 file-ext changes for comments
 ** 2025-09-03	 konakona		 Move BaseWriteReason to BaseUtilities, add
 **                               update history macro
 ** 2025-09-02    konakona        Move to fileutilities.em
@@ -504,80 +506,40 @@ macro InsIfdef()
 
 macro InsEditReasonComment()
 {
-	 auth = Ask("Enter author:")
-	 sz = Ask("Enter reason:")
-	 if (sz != "")
-	 {
-	  szTime = GetSysTime(1)
-	  Day = szTime.Day
-	  Month = szTime.Month
-	  Year = szTime.Year
-	  if (Day < 10)
-	   szDay = "0@Day@"
-	  else
-	   szDay = Day
-	  if (Month < 10)
-	   szMonth = "0@Month@"
-	  else
-	   szMonth = Month
-	  hwnd = GetCurrentWnd()
-	  lnFirst = GetWndSelLnFirst(hwnd)
-	  lnLast = GetWndSelLnLast(hwnd)
-	  hbuf = GetCurrentBuf()
-	  InsBufLine(hbuf, lnFirst, "//@auth@ @Year@/@szMonth@/@szDay@ @sz@ - start")
-	  InsBufLine(hbuf, lnLast + 2,  "//@auth@ @Year@/@szMonth@/@szDay@ @sz@ - end")
-	 }
-}
+	auth = Ask("Enter author:")
+	sz = Ask("Enter reason:")
+	if (sz != "")
+	{
+		szTime = GetSysTime(1)
+		Day = szTime.Day
+		Month = szTime.Month
+		Year = szTime.Year
+		if (Day < 10)
+		szDay = "0@Day@"
+		else
+		szDay = Day
+		if (Month < 10)
+		szMonth = "0@Month@"
+		else
+		szMonth = Month
+		hwnd = GetCurrentWnd()
+		lnFirst = GetWndSelLnFirst(hwnd)
+		lnLast = GetWndSelLnLast(hwnd)
+		hbuf = GetCurrentBuf()
 
-/*
-** ===========================================================================
-**
-** Function:        
-**     InsEditReasonCommentHash
-**
-** Description: 
-**     Writes edit reason comment around selection in makefile
-** 
-** Input: 
-**     Author, reason
-** 
-** Output: 
-**     Edit reason comment around selection
-** 
-** Return value: 
-**     none
-** 
-** Side effects:
-**     File overwritten
-**
-** ===========================================================================
-*/
+		ext = StringGetExtension(GetBufName(hbuf))
+		if (ext == "mk" || ext == "mak")
+			pre = "#"
+		else if (ext == "ini")
+			pre = "; "
+		else if (ext == "bat" || ext == "cmd")
+			pre = "REM "
+		else
+			pre = "//"
 
-macro InsEditReasonCommentHash()
-{
-	 auth = Ask("Enter author:")
-	 sz = Ask("Enter reason:")
-	 if (sz != "")
-	 {
-	  szTime = GetSysTime(1)
-	  Day = szTime.Day
-	  Month = szTime.Month
-	  Year = szTime.Year
-	  if (Day < 10)
-	   szDay = "0@Day@"
-	  else
-	   szDay = Day
-	  if (Month < 10)
-	   szMonth = "0@Month@"
-	  else
-	   szMonth = Month
-	  hwnd = GetCurrentWnd()
-	  lnFirst = GetWndSelLnFirst(hwnd)
-	  lnLast = GetWndSelLnLast(hwnd)
-	  hbuf = GetCurrentBuf()
-	  InsBufLine(hbuf, lnFirst, "#@auth@ @Year@/@szMonth@/@szDay@ @sz@ - start")
-	  InsBufLine(hbuf, lnLast + 2,  "#@auth@ @Year@/@szMonth@/@szDay@ @sz@ - end")
-	 }
+		InsBufLine(hbuf, lnFirst, "@pre@@auth@ @Year@/@szMonth@/@szDay@ @sz@ - start")
+		InsBufLine(hbuf, lnLast + 2,  "@pre@@auth@ @Year@/@szMonth@/@szDay@ @sz@ - end")
+	}
 }
 
 /*
@@ -627,16 +589,45 @@ macro InsUpdateInHistory()
 
 		is_makefile = 0
 
+
 		section_str = "** ----------    ------------    --------------------------------"
 
 		find = SearchInBuf(hbuf, section_str, 0,0, TRUE, FALSE, TRUE)
 
-		if (find == "")
+		if (find != "")
+		{
+			pre = "** "
+		}
+		else
 		{
 			section_str = "# ----------    ------------    --------------------------------"
 			find = SearchInBuf(hbuf, section_str, 0,0, TRUE, FALSE, TRUE)
 		}
 
+		if (find != "")
+		{
+			pre = "# "
+		}
+		else
+		{
+			section_str = "REM ----------    ------------    --------------------------------"
+			find = SearchInBuf(hbuf, section_str, 0,0, TRUE, FALSE, TRUE)
+		}
+
+		if (find != "")
+		{
+			pre = "REM "
+		}
+		else
+		{
+			section_str = "; ----------    ------------    --------------------------------"
+			find = SearchInBuf(hbuf, section_str, 0,0, TRUE, FALSE, TRUE)
+		}
+
+		if (find != "")
+		{
+			pre = "; "
+		}
 		if (find == "")
 		{
 			UtilitiesShowMessage("FILE_CANNOT_FIND_INFOHDR", GetFileName(GetBufName(hBuf)), 1)
@@ -658,10 +649,7 @@ macro InsUpdateInHistory()
 				szMyName = szMyName # " "
 			szFixMyName = szMyName
 
-		if (is_makefile == 0)
-			InsBufLine(hbuf, find_line+1, "** @Year@/@szMonth@/@szDay@    @szFixMyName@    @szDescription@")
-		else
-			InsBufLine(hbuf, find_line+1, "# @Year@/@szMonth@/@szDay@    @szFixMyName@    @szDescription@")
+		InsBufLine(hbuf, find_line+1, "@pre@@Year@/@szMonth@/@szDay@    @szFixMyName@    @szDescription@")
 	}
 }
 }

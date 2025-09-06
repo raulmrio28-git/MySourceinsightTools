@@ -85,3 +85,25 @@ macro StringConvertFromEscape(str)
 
 	return new_str
 }
+
+macro StringGetExtension(str)
+{
+	len = strlen(str)
+	
+	while (str[len-1] != ".")
+		len = len - 1
+
+	tmp = strmid(str, len, strlen(str))
+
+	len = strlen(tmp)
+
+	cur_len = 0
+
+	while (cur_len<len)
+	{
+		tmp[cur_len] = tolower(tmp[cur_len])
+		cur_len = cur_len+1
+	}
+
+	return tmp
+}
