@@ -9,7 +9,7 @@
 	IndexFragments="1"
 	UseMasterFileList="0"
 	SourceDir="."
-	BackupDir="I:\project_SI\Backups"
+	BackupDir="%PROJECT_DATA_DIR%\Backup"
 	MasterFileList="%PROJECT_SOURCE_DIR%\%PROJECT_NAME%_filelist.txt"
 	IsImportProject="0"
 	>
